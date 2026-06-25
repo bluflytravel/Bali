@@ -109,7 +109,7 @@ body { font-family: 'Prompt', sans-serif; }
     <div class="max-w-4xl mx-auto relative z-10">
      <p id="companyNameDisplay" class="text-sm tracking-[0.3em] uppercase opacity-80 mb-3">Bluefly Travel</p>
      <div class="flex items-center justify-center gap-3 mb-4">
-      <h1 id="mainTitleDisplay" class="font-display text-3xl md:text-5xl font-bold leading-tight">Indonesia • Bali •</h1>
+      <h1 id="mainTitleDisplay" class="font-display text-3xl md:text-5xl font-bold leading-tight">Indonesia • Bali </h1>
       <span class="text-4xl">✈️</span>
      </div>
      <p class="text-lg md:text-xl opacity-90 font-light">ความเชื่อ &amp; ศรัทธา แห่งบาหลี</p>
@@ -129,10 +129,9 @@ body { font-family: 'Prompt', sans-serif; }
     <div class="max-w-5xl mx-auto flex overflow-x-auto gap-1 p-2">
      <button onclick="showSection('flights')" class="nav-btn active flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="flights"><span class="hidden md:inline">✈️ </span>เที่ยวบิน</button>
      <button onclick="showSection('itinerary')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="itinerary"><span class="hidden md:inline">📋 </span>โปรแกรมทัวร์</button>
-     <button onclick="showSection('country')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="country"><span class="hidden md:inline">🏛️ </span>ข้อมูลประเทศ</button>
+     <button onclick="showSection('country')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="country"><span class="hidden md:inline">🐦‍🔥 </span>ข้อมูลประเทศ</button>
      <button onclick="showSection('weather')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="weather"><span class="hidden md:inline">🌤️ </span>สภาพอากาศ</button>
      <button onclick="showSection('clothing')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="clothing"><span class="hidden md:inline">👔 </span>การแต่งกาย</button>
-     <button onclick="showSection('tips')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="tips"><span class="hidden md:inline">💡 </span>เกร็ดน่ารู้</button>
      <button onclick="showSection('Passenger')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="Passenger">รายชื่อผู้เดินทาง</button>
     </div>
    </nav>
@@ -143,7 +142,7 @@ body { font-family: 'Prompt', sans-serif; }
     <section id="sec-flights" class="tab-section active fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">✈️ ข้อมูลเที่ยวบิน</h2>
      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6">
-      <h4 class="font-semibold text-amber-800 mb-3">🎒 ข้อมูลน้ำหนักกระเป๋า</h4>
+      <h4 class="font-semibold text-amber-800 mb-3">🧳 ข้อมูลน้ำหนักกระเป๋า</h4>
       <div class="grid md:grid-cols-2 gap-4 text-sm">
        <div>
         <p class="font-semibold text-amber-900 mb-2">✈️ Economy Class</p>
@@ -227,15 +226,10 @@ body { font-family: 'Prompt', sans-serif; }
       <button onclick="showDay(1)" class="day-tab active-day px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 1</button>
       <button onclick="showDay(2)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 2</button>
       <button onclick="showDay(3)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 3</button>
-      <button onclick="showDay(4)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 4</button>
-      <button onclick="showDay(5)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 5</button>
-      <button onclick="showDay(6)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 6</button>
-      <button onclick="showDay(7)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 7</button>
-      <button onclick="showDay(8)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 8</button>
      </div>
 
      <!-- ===== DAY 1 ===== -->
-     <div id="day-1" class="day-content">
+     <div id="day-1" class="day-content w-full">
       <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
         <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">1</span>
@@ -268,16 +262,25 @@ body { font-family: 'Prompt', sans-serif; }
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารกลางวัน — Sentosa Restaurant</p>
+          <p class="font-semibold">🍽️ รับประทานอาหารกลางวัน ณ ภัตตาคาร — Sentosa Restaurant</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู:</p>
+           <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
            <p>Steam Rice, Fried Fish, Chicken Tofu, Chicken Corn Soup, StirFried Tomato, Steam Prawn, Grilled Squid, Stir Fried with Garlic, Ice Tea</p>
-          </div>
-          <div class="mt-3">
-           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1" loading="lazy" class="tour-img" alt="Sentosa Restaurant">
+           <div class="mt-3 flex gap-3">
+            <img
+                src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0="
+                class="w-1/2 rounded-lg object-cover aspect-video"
+                alt="Image 1">
+
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1"
+                class="w-1/2 rounded-lg object-cover aspect-video"
+                alt="Image 2">
+           </div>
           </div>
          </div>
         </div>
+
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
@@ -287,66 +290,111 @@ Park)</p>
 ประทับใจในความกตัญญู และยอมรับพญาครุฑเป็นพาหนะคู่กายพร้อมประทานความเป็นอมตะให้
 นิยมขอพรในเรื่องความเจริญรุ่งเรืองในหน้าที่การงาน การเลื่อนขั้นเลื่อนตำแหน่ง การเสริมอำนาจบารมี และการปกป้องคุ้มครองจากภัยอันตรายหรือสิ่งอัปมงคล ทั้งยังเหมาะสำหรับผู้ที่ต้องการขอพรเรื่อง ความกตัญญู รุ่งเรือง</p>
           <div class="mt-3">
-           <img src="https://baligreentour.com/wp-content/uploads/2015/10/Garuda-Wisnu-Kencana-Cultural-Park-Bali-Tourist-Attractions-Bali-Green-Tour.webp" loading="lazy" class="tour-img" alt="Passeig de Gracia">
+           <img src="https://baligreentour.com/wp-content/uploads/2015/10/Garuda-Wisnu-Kencana-Cultural-Park-Bali-Tourist-Attractions-Bali-Green-Tour.webp" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
           </div>
-                  <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🙏 ทำ พิธีบวงสรวง พระศิวะ ในปาง "รุทร" (Lord Rudra) ณ วัดอูลูวาตู (Uluwatu Temple)</p>
-          <p class="text-subtle mt-1">ชาวฮินดูบาหลีสร้างวัดแห่งนี้ขึ้นเพื่ออุทิศถวายแด่พระศิวะในปางผู้ทำลายล้างสิ่งชั่วร้ายและปกป้องจักรวาล เชื่อกันว่าพลังของพระองค์ ณ หน้าผาแห่งนี้จะช่วยปกป้องเกาะบาหลีจากสิ่งอัปมงคลและภัยพิบัติทางทะเล ตัววัดถูกสร้างขึ้นในช่วงศตวรรษที่ 11 บนหน้าผาหินสูง 70 เมตร ที่ยื่นออกสู่ท้องทะเล โดยมีตำนานเล่าว่าหินที่เป็นฐานของตัววัดนั้นเป็นส่วนหนึ่งของเรือสำเภาที่กลายเป็นหิน วัดอูลูวาตู (Uluwatu Temple) ยังโด่งดังในเรื่อง โชว์ระบำเคจั๊ก (Kecak Dance) ระบำที่มีชื่อเสียงมากที่สุดในบาหลี ความอลังการของโชว์ที่ใช้นักแสดงกว่า 50 คน มาวาดลวดลายแสดงตามเนื้อเรื่องจากวรรณกรรมรามเกียรติ์ ในตอนที่พระรามยกพลทัพลิงมาช่วยนางสีดาที่เกาะลังกา พร้อมชมวิวพระอาทิตย์ตกดินของวัดอูลูวาตู (Uluwatu Temple) ที่ขึ้นชื่อว่าเป็นอีกหนึ่งจุดชมวิวพระอาทิตย์ตกที่สวยที่สุดอีกแห่งหนึ่งในบาหลี</p>
-<div class="mt-3 grid grid-cols-3 gap-3">
-    <img src="https://www.bulgarihotels.com/.imaging/bhr-960-jpg/dam/BALI/WHAT-S-ON/IN-BALI/shutterstock_1433767703.jpg/jcr%3Acontent"
-         class="tour-img col-span-2"
-         alt="Main Image">
-
-    <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg"
-         class="tour-img"
-         alt="Secondary Image">
-</div>
-
-         </div>
          </div>
         </div>
-</div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="text-sm">
+          <p class="font-semibold">🙏 ทำพิธีบวงสรวงพระศิวะในปาง "รุทร" (Lord Rudra) ณ วัดอูลูวาตู (Uluwatu Temple)</p>
+          <p class="text-subtle mt-1">ชาวฮินดูบาหลีสร้างวัดแห่งนี้ขึ้นเพื่ออุทิศถวายแด่พระศิวะในปางผู้ทำลายล้างสิ่งชั่วร้ายและปกป้องจักรวาล เชื่อกันว่าพลังของพระองค์ ณ หน้าผาแห่งนี้จะช่วยปกป้องเกาะบาหลีจากสิ่งอัปมงคลและภัยพิบัติทางทะเล ตัววัดถูกสร้างขึ้นในช่วงศตวรรษที่ 11 บนหน้าผาหินสูง 70 เมตร ที่ยื่นออกสู่ท้องทะเล โดยมีตำนานเล่าว่าหินที่เป็นฐานของตัววัดนั้นเป็นส่วนหนึ่งของเรือสำเภาที่กลายเป็นหิน วัดอูลูวาตู (Uluwatu Temple) ยังโด่งดังในเรื่อง โชว์ระบำเคจั๊ก (Kecak Dance) ระบำที่มีชื่อเสียงมากที่สุดในบาหลี ความอลังการของโชว์ที่ใช้นักแสดงกว่า 50 คน มาวาดลวดลายแสดงตามเนื้อเรื่องจากวรรณกรรมรามเกียรติ์ ในตอนที่พระรามยกพลทัพลิงมาช่วยนางสีดาที่เกาะลังกา พร้อมชมวิวพระอาทิตย์ตกดินของวัดอูลูวาตู (Uluwatu Temple) ที่ขึ้นชื่อว่าเป็นอีกหนึ่งจุดชมวิวพระอาทิตย์ตกที่สวยที่สุดอีกแห่งหนึ่งในบาหลี</p>
+          <div class="mt-3 flex gap-3">
+           <img
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQu8M8HCeF6pvXzhmjZSCHiQ6iP54zPqQJQ&s"
+               class="w-1/2 rounded-lg object-cover aspect-video"
+               alt="Image 1">
+
+           <img
+               src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg"
+               class="w-1/2 rounded-lg object-cover aspect-video"
+               alt="Image 2">
+          </div>
+         </div>
+        </div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="text-sm">
+          <p class="font-semibold">🍽️ รับประทานอาหารค่ำ ณ ภัตตาคาร — Jimbaran Bay Seafood</p>
+          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
+           <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
+           <p>Soup, Grilled Fish, Grilled Crab, Grilled Prawn, Grilled clams, Crispy Squid, Steam Rice, Vegetable , Fruit</p>
+           <div class="mt-3 flex gap-3">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s"
+                class="w-1/2 rounded-lg object-cover aspect-video"
+                alt="Image 1">
+            <img
+                src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg"
+                class="w-1/2 rounded-lg object-cover aspect-video"
+                alt="Image 2">
+           </div>
+          </div>
+         </div>
+        </div>
+
+       </div> <!-- space-y-4 -->
+       <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
+        <span>🏨</span>
+        <strong>นำคณะเข้าสู่ที่พัก Adhi Jaya Hotel Kuta หรือเทียบเท่า ★★★★</strong>
        </div>
       </div>
-     </div><!-- /day-1 -->
+     </div> <!-- /day-1 -->
 
-     <!-- ===== DAY 2 ===== -->
-     <div id="day-2" class="day-content" style="display:none;">
+<!-- ===== DAY 2 ===== -->
+<div id="day-2" class="day-content" style="display:none;">
       <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
         <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">2</span>
         <div>
-         <h3 class="font-semibold text-lg">วันเสาร์ที่ 9 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">เวียนนา → บาร์เซโลนา</p>
+         <h3 class="font-semibold text-lg">วันจันทร์ที่ 10 สิงหาคม 2569</h3>
+         <p class="text-sm text-subtle">บาหลี</p>
         </div>
-        <span class="ml-auto text-2xl">🏛️</span>
+        <span class="ml-auto text-2xl">🛕</span>
        </div>
        <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
 
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">05:35 น.</span> — เดินทางถึงสนามบินเวียนนา แวะเปลี่ยนเครื่อง</p>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">06:50 น.</span> — ✈️ ออกเดินทางสู่บาร์เซโลนา โดย Austrian Airlines เที่ยวบิน OS 401</p>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">09:10 น.</span> — เดินทางถึงสนามบินบาร์เซโลนา-เอล แปรต</p>
+         <div class="text-sm">
+          <p class="font-semibold">🍽️ รับประทานอาหารเช้าในโรงแรม</p>
+          <div>
+          </div>
+         </div>
         </div>
 
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">📸 Passeig de Gracia</p>
-          <p class="text-subtle mt-1">เป็นหนึ่งในถนนที่หรูหราและเป็นตัวแทนของกรุงบาร์เซโลนามากที่สุด ตั้งอยู่ใจกลางย่าน Eixample ถนนสายนี้มีชื่อเสียงด้านสถาปัตยกรรม Modernist อันโดดเด่น ได้แก่ Casa Batlló โดย Antoni Gaudí และ Casa Milà (La Pedrera) ซึ่งได้รับการขึ้นทะเบียนเป็นมรดกโลก UNESCO</p>
+          <p class="font-semibold">🙏 ทำพิธีบวงสรวง พระพรหม, พระนารายณ์ และพระศิวะ ณ วัดเบซากิห์ (Besakih)</p>
+          <p class="text-subtle mt-1">สร้างขึ้นเมื่อราว ค.ศ. 8 เป็นวัดเก่าแก่ดั้งเดิมมาตั้งแต่สมัยโบราณ โดยวัดจากอายุของหินแล้วอาจเก่าถึง2,000 ปี วัดแห่งนี้โดดเด่นไปด้วยสถาปัตยกรรมแบบฮินดู-บาหลี ทั้งโบสถ์ วิหาร ศาลาและรูปปั้นทวยเทพต่างๆ ภายในประกอบด้วยวัดเล็กวัดน้อยจำนวนมากวัดที่มีความสำคัญที่สุดในปุราเบซากิห์คือปุราเปนาทารัน อากุง (Pura Penataraa Aguan) เชื่อกันว่าที่นี่เป็นที่ประทับขององค์ไตรภูวนาถผู้เป็นใหญ่ในสามโลกคือ สวรรค์ มนุษย์ และบาดาล อยู่ตรงกลางเป็นไฮไลท์ ในช่วงประมาณ 7-8 โมงของวันที่ฟ้าเปิดสามารถมองเห็นวัดเบซากิห์ตั้งตระหง่านโดดเด่นท่ามกลางฉากหลังของภูเขาไฟกุนุง อากุงและที่นี่มีวิหารบูชาพระพรหม, พระนารายณ์ และพระศิวะ เทพเจ้าแห่งฮินดู ได้สักการะบูชาขอพรเหล่าเทพยดาเพื่อความเป็นสิริมงคล
+ปัดเป่าสิ่งชั่วร้ายอีกด้วย</p>
+          <div class="mt-3 flex gap-3">
+           <img
+               src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg"
+               class="w-1/2 rounded-lg object-cover aspect-video"
+               alt="Image 1">
+
+           <img
+               src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg"
+               class="w-1/2 rounded-lg object-cover aspect-video"
+               alt="Image 2">
+          </div>
+         </div>
+        </div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="text-sm">
+          <p class="font-semibold">🙏 ทำพิธีบวงสรวง พระอินทร์ ณ วัดท่ามะแพง หรือ วัดตีร์ต๊ะเอ็มเปิ้ล (Tirta Empul Temple)</p>
+          <p class="text-subtle mt-1">วัดนี้เป็นวัดฮินดูเก่าแก่ที่มีอายุมากกว่า 1,000 ปี (สร้างขึ้นประมาณ ค.ศ. 962) "บ่อน้ำ พุศักดิ์สิทธิ์ธรรมชาติ" ที่ผุดขึ้นมาจากใต้ดินซึ่งชาวบาหลีเชื่อว่าพระอินทร์เป็นผู้บันดาลให้เกิดขึ้นเพื่อรักษาบำบัดกองทัพเทพที่ถูกพิษจากอสูรการมามูที่นี่ไม่ได้มีแค่การกราบไหว้ แต่คือการทำ พิธี "Melukat" (เมอลูกัต) หรือพิธีชำระล้างร่างกายและจิตวิญญาณโดยการลงไปในสระน้ำและรองน้ำ จากท่อพุที่เรียงรายอยู่ให้ไหลผ่านศีรษะ 
+       <li>ชำระล้างสิ่งชั่วร้าย ขับไล่สิ่งอัปมงคล คุณไสย เสนียดจัญไรหรือฝันร้ายให้หมดไป</li>
+       <li>ช่วยบำบัดรักษา เชื่อว่าน้ำ ศักดิ์สิทธิ์ช่วยเยียวยาโรคภัยไข้เจ็บ ทั้งทางกายและทางใจ</li>
+       <li>เสริมสิริมงคลขอพรเรื่องความสงบสุขในชีวิต ความเจริญรุ่งเรือง และสติปัญญา</li></p>
           <div class="mt-3">
-           <img src="https://blog.apartmentbarcelona.com/wp-content/uploads/2020/05/illa-de-discordia-scaled.jpg" loading="lazy" class="tour-img" alt="Passeig de Gracia">
+           <img src="https://www.balimagictour.com/wp-content/uploads/tirta-empul-tampaksiring.jpg" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
           </div>
          </div>
         </div>
@@ -354,10 +402,8 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารกลางวัน — Rio Azul Restaurant</p>
-          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู:</p>
-           <p>Hongkong style soup • Steam Whole Fish • Hongkong style pork rib (Baked) • Salt and Pepper Shrimp • Steamed chicken Hong Kong style • Omelette with prawns • Half Roast duck</p>
+          <p class="font-semibold">🍽️ รับประทานอาหารกลางวัน ณ ภัตตาคาร</p>
+          <div>
           </div>
          </div>
         </div>
@@ -365,10 +411,10 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">⛪ Sagrada Familia</p>
-          <p class="text-subtle mt-1">มหาวิหารที่มีชื่อเสียงที่สุดของเมืองบาร์เซโลนา มีความสูงถึง 170 เมตร สร้างขึ้นในปี ค.ศ. 1882 เพื่อเป็นอนุสรณ์แด่ครอบครัวพระเยซู</p>
+          <p class="font-semibold">🛍️ เดอะ คลันจัง บาหลี (The Keranjang Bali)</p>
+          <p class="text-subtle mt-1">อิสระช็อปปิ้ง ณ เดอะ คลันจัง บาหลี (The Keranjang Bali) เป็นหนึ่งในแลนด์มาร์กและศูนย์รวมของฝากแห่งใหม่ที่โด่งดังมากในเกาะบาหลี สิ่งที่เป็นเอกลักษณ์ที่สุดของที่นี่คือ ตัวอาคารที่สร้างเป็นรูป "ตะกร้าสานขนาดยักษ์" ซึ่งสื่อถึงภาชนะที่คนบาหลีใช้ใส่ของฝากและสินค้าพื้นเมือง ชั้นบนของอาคารเป็นที่ตั้งของ Kampung Langit (หมู่บ้านลอยฟ้า) ซึ่งเป็นสวนวัฒนธรรมในร่ม (Cultural Indoor Theme Park) แห่งแรกของบาหลี</p>
           <div class="mt-3">
-           <img src="https://www.barcelo.com/guia-turismo/wp-content/uploads/sagrada-familia-1.jpg" alt="Sagrada Familia" loading="lazy" class="tour-img">
+           <img src="https://media-cdn.tripadvisor.com/media/photo-s/18/33/56/65/the-first-cultural-skypark.jpg" alt="Sagrada Familia" loading="lazy" class="tour-img">
           </div>
          </div>
         </div>
@@ -376,17 +422,20 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารค่ำ — Marina Bay Restaurant</p>
+          <p class="font-semibold">🍽️ รับประทานอาหารค่ำ ณ ภัตตาคาร — Beras Merah Restaurant</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู :</p>
-           <p>Salpicon Marisco (ซีฟู้ดรวม) • 1/4 Langostino Cocido (กุ้ง) • 1/4 Mejillones Marinera (หอยแมลงภู่) • Seafood Paella • Lemon Sorbet • Bread</p>
+           <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
+           <p>Soup, Salad Bar, Steam Rice, Steam Bok Choi Ginger Garlic, Kung Pao Chicken, Deep Fried Fish Black Pepper, Stir Fried Chili Beef, Steam Tofu, Dessert</p>
+          <div class="mt-3">
+           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/a2/f4/f9/a-stylish-and-inviting.jpg?w=900&h=500&s=1" alt="Sagrada Familia" loading="lazy" class="tour-img">
+           </div>
           </div>
          </div>
         </div>
 
        </div>
        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
-        <span>🏨</span> <strong>Melia Barcelona Sarriá ★★★★★</strong>
+        <span>🏨</span> <strong>นำคณะเข้าสู่ที่พัก Adhi Jaya Hotel Kuta หรือเทียบเท่า ★★★★</strong>
        </div>
       </div>
      </div><!-- /day-2 -->
@@ -397,291 +446,8 @@ Park)</p>
        <div class="flex items-center gap-3 mb-4">
         <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">3</span>
         <div>
-         <h3 class="font-semibold text-lg">วันอาทิตย์ที่ 10 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">บาร์เซโลนา</p>
-        </div>
-        <span class="ml-auto text-2xl">⚽</span>
-       </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🛍️ La Roca Village</p>
-          <p class="text-subtle mt-1">Outlet Shopping Village มีร้านค้ามากมายกว่า 90 ร้านค้า เช่น Burberry, Cacharel, Calvin Klein, Lacoste ฯลฯ</p>
-          <div class="mt-3">
-           <img src="https://media.istockphoto.com/id/545113358/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%8A%E0%B9%89%E0%B8%AD%E0%B8%9B%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B9%83%E0%B8%99%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99-la-roca-%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%8B%E0%B9%82%E0%B8%A5%E0%B8%99%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=wzpD4_T3x7pHimFKVop1keux1sSqOI2GfxvlK0qd7AA=" alt="La Roca Village" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm"><p class="font-semibold">🍽️ อาหารกลางวัน</p></div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">📸 Spanish Village (Poble Espanyol)</p>
-          <p class="text-subtle mt-1">หมู่บ้านชาวสเปนสร้างขึ้นเพื่อจัดแสดงนิทรรศการโลกปี 1929 มีอาคารในสไตล์สถาปัตยกรรมตามแบบฉบับของจังหวัดต่างๆ ในสเปน</p>
-          <div class="mt-3">
-           <img src="https://www.barcelona.de/images/poble-espanyol/480-poble-espanyol-02.jpg" alt="Poble Espanyol" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🏟️ Camp Nou</p>
-          <p class="text-subtle mt-1">สนามเหย้าของ FC Barcelona เป็นสนามฟุตบอลที่ใหญ่ที่สุดในยุโรป จุได้กว่า 99,000 คน</p>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">⚽ FC Barcelona vs Real Madrid</p>
-          <p class="text-sm opacity-90 mt-1">21.00 น. ชมการแข่งขันฟุตบอล El Clásico!</p>
-          <div class="mt-3">
-           <img src="https://thesportsprince.com/wp-content/uploads/2024/10/1698252916848.png" alt="El Clasico" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm"><p class="font-semibold">🍽️ อาหารค่ำ</p></div>
-        </div>
-
-       </div>
-       <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
-        <span>🏨</span> <strong>Melia Barcelona Sarriá ★★★★★</strong>
-       </div>
-      </div>
-     </div><!-- /day-3 -->
-
-     <!-- ===== DAY 4 ===== -->
-     <div id="day-4" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
-       <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">4</span>
-        <div>
-         <h3 class="font-semibold text-lg">วันจันทร์ที่ 11 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">บาร์เซโลนา → ซาราโกซ่า</p>
-        </div>
-        <span class="ml-auto text-2xl">⛪</span>
-       </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">🚌</span> เดินทางสู่เมืองซาราโกซ่า (Zaragoza) ใช้เวลาเดินทางประมาณ 3 ชั่วโมง 30 นาที</p>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารกลางวัน — Paraiso Chinese restaurant</p>
-          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู :</p>
-           <p>Corn soup with crab meat • Pork rib with soya sauce • Beef with green peppers • Spicy tofu • Chinese vegetables • Fish in soya sauce</p>
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">⛪ Basilica of Our Lady of the Pillar</p>
-          <p class="text-subtle mt-1">วิหารโรมันคาทอลิกที่ตั้งอยู่ริมแม่น้ำใจกลางเมืองซาราโกซ่า ได้ชื่อว่าเป็นโบสถ์ที่อุทิศแด่พระแม่มารีแห่งแรกของโลก</p>
-          <div class="mt-3">
-           <img src="https://cdn.firespring.com/images/954fb4c9-2d55-4583-ad28-ae26b83ce0bd.jpg" alt="Basilica of Our Lady of the Pillar" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🏛️ Plaza Del Pilar</p>
-          <p class="text-subtle mt-1">จัตุรัสที่พลุกพล่านที่สุดในซาราโกซา รายล้อมไปด้วยมหาวิหารและอาคารประวัติศาสตร์มากมาย</p>
-          <div class="mt-3">
-           <img src="https://media.istockphoto.com/id/1068694928/es/foto/plaza-de-pilar-zaragoza-espa%C3%B1a.jpg?s=612x612&w=0&k=20&c=8X0Lkjj-uwM7M9Yo0Mr1ZlWOZun0ctQA_GXLg3Xvslo=" alt="Plaza Del Pilar" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm"><p class="font-semibold">🍽️ อาหารค่ำ</p></div>
-        </div>
-
-       </div>
-       <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
-        <span>🏨</span> <strong>NH Ciudad de Zaragoza ★★★★</strong>
-       </div>
-      </div>
-     </div><!-- /day-4 -->
-
-     <!-- ===== DAY 5 ===== -->
-     <div id="day-5" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
-       <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">5</span>
-        <div>
-         <h3 class="font-semibold text-lg">วันอังคารที่ 12 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">ซาราโกซ่า → มาดริด</p>
-        </div>
-        <span class="ml-auto text-2xl">💃</span>
-       </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">🚌</span> เดินทางสู่กรุงมาดริด ใช้เวลาเดินทางประมาณ 4 ชั่วโมง</p>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารกลางวัน — Zen Bamboo</p>
-          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู:</p>
-           <p>Wanton Soup • Steamed Whole Fish • Omelette with Shrimp • Fried Chicken Wings • Pork with Oyster Sauce • Roast Duck • Seasonal Vegetables • Salt and Pepper Shrimp</p>
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🏛️ Plaza de Cibeles &amp; Cibeles Fountain</p>
-          <p class="text-subtle mt-1">จัตุรัสที่มีอาคารสถาปัตยกรรมนีโอคลาสสิคที่โดดเด่นที่สุดกลางเมืองมาดริด</p>
-          <div class="mt-3">
-           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/91/d1/5e/photo1jpg.jpg?w=900&h=500&s=1" alt="Plaza de Cibeles" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🚪 Puerta de Alcalá</p>
-          <p class="text-subtle mt-1">อนุสรณ์สถานสำคัญ ประตูชัยของกรุงมาดริด สร้างขึ้นในปี 1599 เพื่อถวายแด่พระเจ้าชาร์ลส์ที่ 3</p>
-          <div class="mt-3">
-           <img src="https://caminoon.com/wp-content/uploads/2020/11/puerta-de-alcala-atardecer.jpg" alt="Puerta de Alcala" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🛍️ Gran Vía</p>
-          <p class="text-subtle mt-1">แหล่งช้อปปิ้งยอดนิยมใจกลางกรุงมาดริด มีโรงแรม ห้างสรรพสินค้า ร้านค้า และโรงภาพยนตร์มากมาย</p>
-          <div class="mt-3">
-           <img src="https://cdn.sanity.io/images/nxpteyfv/goguides/2724cb77e243e26590137a78a8b6d7f7407754b5-1600x1066.jpg" alt="Gran Via" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm"><p class="font-semibold">🍽️ อาหารค่ำ</p></div>
-        </div>
-
-       </div>
-       <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
-        <span>🏨</span> <strong>Melia Castilla ★★★★</strong>
-       </div>
-      </div>
-     </div><!-- /day-5 -->
-
-     <!-- ===== DAY 6 ===== -->
-     <div id="day-6" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
-       <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">6</span>
-        <div>
-         <h3 class="font-semibold text-lg">วันพุธที่ 13 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">มาดริด</p>
-        </div>
-        <span class="ml-auto text-2xl">🛍️</span>
-       </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">☀️ Plaza Puerta del Sol</p>
-          <p class="text-subtle mt-1">จัตุรัสกลางเมืองมาดริด จุดกิโลเมตรที่ 0 ของสเปน</p>
-          <div class="mt-3">
-           <img src="https://estaticos.esmadrid.com/cdn/farfuture/nldtTlfQcQlA0xrodWcdVhLDu0vy8y7w2anxSeBmlYA/mtime:1586255274/sites/default/files/recursosturisticos/infoturistica/f_i_pg_111009_puerta_sol_-1.jpg" alt="Puerta del Sol" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🏛️ Plaza Mayor</p>
-          <p class="text-subtle mt-1">จัตุรัสใจกลางเมือง จุดนับกิโลเมตรแรกของสเปน ศูนย์กลางรถไฟใต้ดินและรถเมล์ทุกสาย</p>
-          <div class="mt-3">
-           <img src="https://cityspotters.imgix.net/dAXnucTiv2ZASvCKs1gVdvUZ?ixlib=rails-3.1.0&auto=enhance%2Ccompress%2Cformat&q=50&fit=crop&crop=entropy&w=1200&h=630&s=768625bbf95f6c02f958a5ed84e3b5a9" alt="Plaza Mayor" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารกลางวัน — Tang Chu</p>
-          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู:</p>
-           <p>Corn and crab soup • White Rice, Fruit, Tea • Seasonal vegetables, Egg omelet, Fried noodles with vegetables • Steam whole fish, Kungpao chicken, Fried chicken wings, Pork with onion • Spicy squid</p>
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🛍️ Las Rozas Village</p>
-          <p class="text-subtle mt-1">Outlet Shopping Village แบรนด์เนมสุดหรูใกล้กรุงมาดริด ลดราคา 30-60% ครอบคลุม Gucci, Prada, Burberry, Versace, Loewe, Nike และอีกมากมาย</p>
-          <div class="mt-3">
-           <img src="https://phantom-expansion.uecdn.es/c04f0753f282734ebae786940c19b814/f/webp/assets/multimedia/imagenes/2025/07/18/17528211248980.jpg" alt="Las Rozas Village" loading="lazy" class="tour-img">
-          </div>
-         </div>
-        </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <div class="text-sm">
-          <p class="font-semibold">🍽️ อาหารค่ำ — Thaidy Restaurant</p>
-          <div class="meal-card rounded-lg p-3 mt-2 text-xs">
-           <p class="font-medium text-brand-dark mb-1">เมนู:</p>
-           <p>Tom Yam Kung • Pla Lad Prik • Pad Pak Thaidy • Massaman Kai • Kai Tod • Plamuek Kapraw • Lab Kai</p>
-          </div>
-         </div>
-        </div>
-
-       </div>
-       <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
-        <span>🏨</span> <strong>Melia Castilla ★★★★</strong>
-       </div>
-      </div>
-     </div><!-- /day-6 -->
-
-     <!-- ===== DAY 7 ===== -->
-     <div id="day-7" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
-       <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">7</span>
-        <div>
-         <h3 class="font-semibold text-lg">วันพฤหัสบดีที่ 14 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">มาดริด → มิวนิก → กรุงเทพฯ</p>
+         <h3 class="font-semibold text-lg">วันอังคารที่ 11 สิงหาคม 2569</h3>
+         <p class="text-sm text-subtle">บาหลี (สาธารณรัฐอินโดนีเซีย) → กรุงเทพฯ </p>
         </div>
         <span class="ml-auto text-2xl">✈️</span>
        </div>
@@ -690,10 +456,8 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">👑 Plaza de Oriente</p>
-          <p class="text-subtle mt-1">จัตุรัสสร้างขึ้นตามคำสั่งของกษัตริย์โจเซฟที่ 1 ปี พ.ศ. 2352 มีรูปปั้นขี่ม้าทองสัมฤทธิ์ของเฟลิเป้ที่ 4</p>
-          <div class="mt-3">
-           <img src="https://tripaim.com/blog/wp-content/uploads/2020/12/Plaza-de-Oriente-en-Madrid.jpg" alt="Plaza de Oriente" loading="lazy" class="tour-img">
+          <p class="font-semibold">🍽️ รับประทานอาหารเช้าในโรงแรม</p>
+          <div>
           </div>
          </div>
         </div>
@@ -701,131 +465,97 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
          <div class="text-sm">
-          <p class="font-semibold">🍷 Mercado De San Miguel</p>
-          <p class="text-subtle mt-1">หนึ่งในตลาดที่เก่าแก่ที่สุดในมาดริด ออกแบบสไตล์โบส์อาร์ตอันสง่างาม เปิดทำการตั้งแต่ปี 1916</p>
-          <div class="mt-3">
-           <img src="https://www.madridhappypeople.com/wp-content/uploads/2024/01/mercado-de-san-miguel-00-jpg.webp" alt="Mercado De San Miguel" loading="lazy" class="tour-img">
+          <p class="font-semibold">นำคณะเดินทางสู่ สนามบินงูระฮ์ไร</p>
+          <div>
           </div>
          </div>
         </div>
 
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">18:25 น.</span> — ✈️ เดินทางสู่มิวนิก โดย Lufthansa เที่ยวบิน LH 1805</p>
+         <p class="text-sm"><span class="font-semibold text-brand">12:10 น.</span> — ✈️ ออกเดินทางสู่ สนามบินดอนเมือง โดยสายการบินแอร์เอเชีย (FD) เที่ยวบินที่ FD397</p>
         </div>
 
         <div class="relative">
          <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">21:00 น.</span> — เดินทางถึงมิวนิก แวะเปลี่ยนเครื่อง</p>
+         <p class="text-sm"><span class="font-semibold text-brand">15:40 น.</span> — ✈️ คณะเดินทางถึง กรุงเทพฯ โดยสวัสดิภาพ</p>
         </div>
-
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">22:20 น.</span> — ✈️ ออกเดินทางสู่กรุงเทพฯ โดย Lufthansa เที่ยวบิน LH 772</p>
-        </div>
-
        </div>
       </div>
-     </div><!-- /day-7 -->
-
-     <!-- ===== DAY 8 ===== -->
-     <div id="day-8" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
-       <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">8</span>
-        <div>
-         <h3 class="font-semibold text-lg">วันศุกร์ที่ 15 พฤษภาคม 2569</h3>
-         <p class="text-sm text-subtle">กรุงเทพฯ</p>
-        </div>
-        <span class="ml-auto text-2xl">🏠</span>
-       </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
-        <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
-         <p class="text-sm"><span class="font-semibold text-brand">14:00 น.</span> — 🛬 เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ</p>
-        </div>
-       </div>
-       <div class="mt-4 bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-        <p class="text-2xl mb-2">🎉</p>
-        <p class="font-semibold text-green-700">เดินทางถึงกรุงเทพฯ โดยสวัสดิภาพ</p>
-        <p class="text-xs text-green-600 mt-1">ขอบคุณที่ไว้วางใจเดินทางกับเรา</p>
-       </div>
-      </div>
-     </div><!-- /day-8 -->
+     </div><!-- /day-3 -->
 
     </section>
 
     <!-- ========== COUNTRY INFO ========== -->
     <section id="sec-country" class="tab-section fade-in">
-     <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">🏛️ ข้อมูลประเทศสเปน</h2>
+     <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">🐦‍🔥 ข้อมูลประเทศอินโดนีเซีย</h2>
      <div class="grid md:grid-cols-1 gap-4 mb-6">
       <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
-       <h3 class="font-semibold text-brand-dark mb-3 text-lg">🇪🇸 ข้อมูลทั่วไป</h3>
+       <h3 class="font-semibold text-brand-dark mb-3 text-lg">🇮🇩 ข้อมูลทั่วไป</h3>
        <div class="space-y-2 text-sm">
-        <div class="flex justify-between"><span class="text-subtle">ชื่อทางการ</span><span class="font-medium">Kingdom of Spain</span></div>
-        <div class="flex justify-between"><span class="text-subtle">เมืองหลวง</span><span class="font-medium">มาดริด (Madrid)</span></div>
-        <div class="flex justify-between"><span class="text-subtle">ภาษาราชการ</span><span class="font-medium">สเปน (Español)</span></div>
-        <div class="flex justify-between"><span class="text-subtle">สกุลเงิน</span><span class="font-medium">ยูโร (EUR / €)</span></div>
-        <div class="flex justify-between"><span class="text-subtle">เวลาท้องถิ่น</span><span class="font-medium">GMT+2 (ช้ากว่าไทย 5 ชม.)</span></div>
-        <div class="flex justify-between"><span class="text-subtle">ปลั๊กไฟ</span><span class="font-medium">Type C/F (220V, 50Hz)</span></div>
-        <div class="flex justify-between"><span class="text-subtle">ประชากร</span><span class="font-medium">~47 ล้านคน</span></div>
-        <div class="flex justify-between"><span class="text-subtle">เบอร์ฉุกเฉิน</span><span class="font-medium">112</span></div>
+        <div class="flex justify-between"><span class="text-subtle">ชื่อทางการ</span><span class="font-medium">Republik Indonesia</span></div>
+        <div class="flex justify-between"><span class="text-subtle">เมืองหลวง</span><span class="font-medium">จาการ์ตา (Jakarta)</span></div>
+        <div class="flex justify-between"><span class="text-subtle">ภาษาราชการ</span><span class="font-medium">ภาษาอินโดนีเซีย (Bahasa Indonesia)</span></div>
+        <div class="flex justify-between"><span class="text-subtle">สกุลเงิน</span><span class="font-medium">รูเปียห์ (IDR / Rp)</span></div>
+        <div class="flex justify-between"><span class="text-subtle">เวลาท้องถิ่น</span><span class="font-medium">GMT+8 (เร็วกว่าไทย 1 ชม.)</span></div>
+        <div class="flex justify-between"><span class="text-subtle">ปลั๊กไฟ</span><span class="font-medium">Type C / F (220V / 110V , 50Hz)</span></div>
+        <div class="flex justify-between"><span class="text-subtle">ประชากร</span><span class="font-medium">~286 ล้านคน</span></div>
+        <div class="flex justify-between"><span class="text-subtle">เบอร์ฉุกเฉิน (ตำรวจ/เหตุฉุกเฉิน) </span><span class="font-medium">110 หรือ 112</span></div>
        </div>
       </div>
       <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
        <h3 class="font-semibold text-brand-dark mb-3 text-lg">💶 สกุลเงินและค่าใช้จ่าย</h3>
        <div class="space-y-2 text-sm">
-        <div class="flex justify-between"><span class="text-subtle">อัตราแลกเปลี่ยน (โดยประมาณ)</span><span class="font-medium">1 EUR ≈ 37-39 THB</span></div>
-        <div class="flex justify-between"><span class="text-subtle">น้ำดื่ม (ขวดเล็ก)</span><span class="font-medium">€1 - €2</span></div>
-        <div class="flex justify-between"><span class="text-subtle">กาแฟ</span><span class="font-medium">€1.50 - €3</span></div>
-        <div class="flex justify-between"><span class="text-subtle">อาหารจานเดียว</span><span class="font-medium">€10 - €20</span></div>
-        <div class="flex justify-between"><span class="text-subtle">รถไฟฟ้า/เมโทร</span><span class="font-medium">€1.50 - €2.50</span></div>
-        <div class="flex justify-between"><span class="text-subtle">แท็กซี่ (เริ่มต้น)</span><span class="font-medium">€3 - €4</span></div>
-        <div class="flex justify-between"><span class="text-subtle">ทิป (ร้านอาหาร)</span><span class="font-medium">5-10% หรือปัดเศษ</span></div>
-        <div class="flex justify-between"><span class="text-subtle">VAT Refund</span><span class="font-medium">ซื้อ €90.16+ ขอคืนภาษีได้</span></div>
-       </div>
+        <div class="flex justify-between"><span class="text-subtle">อัตราแลกเปลี่ยน (โดยประมาณ)</span><span class="font-medium">1 THB ≈ 0.00188 THB</span></div>
       </div>
-     </div>
-     <div class="grid md:grid-cols-1 gap-4">
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover"><h4 class="font-semibold text-brand-dark mb-2">🏙️ บาร์เซโลนา</h4><p class="text-sm text-subtle">เมืองหลวงของแคว้นคาตาลัน ศูนย์กลางศิลปะ สถาปัตยกรรม และฟุตบอล เต็มไปด้วยผลงานของ Gaudí</p></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover"><h4 class="font-semibold text-brand-dark mb-2">⛪ ซาราโกซ่า</h4><p class="text-sm text-subtle">เมืองเก่าแก่ที่สุดแห่งหนึ่งของสเปน ตั้งอยู่ริมแม่น้ำ Ebro เป็นจุดกึ่งกลางระหว่างบาร์เซโลนาและมาดริด</p></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover"><h4 class="font-semibold text-brand-dark mb-2">👑 มาดริด</h4><p class="text-sm text-subtle">เมืองหลวงของสเปน ศูนย์กลางการเมือง วัฒนธรรม และแฟชั่น มีพระราชวัง พิพิธภัณฑ์ และย่านช้อปปิ้งระดับโลก</p></div>
-     </div>
+      </div>
+
      <div class="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-5">
-      <h4 class="font-semibold text-amber-800 mb-2">⚠️ ข้อควรระวัง</h4>
+      <h4 class="font-semibold text-amber-800 mb-2">⚠️ สิ่งที่ควรรู้และมารยาททางวัฒนธรรม</h4>
       <ul class="text-sm text-amber-700 space-y-1">
-       <li>• ระวังมิจฉาชีพและนักล้วงกระเป๋าในย่านท่องเที่ยว โดยเฉพาะ La Rambla, Plaza Mayor</li>
-       <li>• เก็บพาสปอร์ตไว้ในที่ปลอดภัย พกสำเนาติดตัวแทน</li>
-       <li>• ร้านอาหารมักเปิดเสิร์ฟมื้อกลางวัน 13:30-16:00 และมื้อค่ำ 20:30-23:00</li>
-       <li>• ร้านค้าบางแห่งปิดพักกลางวัน (Siesta) ช่วง 14:00-17:00</li>
-       <li>• น้ำประปาดื่มได้ในสเปน แต่แนะนำซื้อน้ำขวดเพื่อความสะดวก</li>
+      <li>• สุขอนามัย: ห้ามดื่มน้ำประปาโดยตรง ควรดื่มน้ำดื่มบรรจุขวดที่ปิดสนิท และระมัดระวังเรื่องสุขอนามัยของอาหารริมทาง เพื่อหลีกเลี่ยงอาการอาหารเป็นพิษ</li>
+       <li>• ห้ามใช้มือซ้าย: มือซ้ายถือเป็นมือสำหรับทำความสะอาดในห้องน้ำ ควรใช้มือขวาในการรับ-ส่งของ ชี้ หรือรับประทานอาหารเสมอ</li>
+       <li>• ห้ามจับศีรษะ: ศีรษะถือเป็นส่วนที่ศักดิ์สิทธิ์ ห้ามลูบศีรษะผู้อื่นรวมถึงเด็กอย่างเด็ดขาด</li>
       </ul>
      </div>
+
+      <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
+       <h4 class="font-semibold text-brand-dark mb-2">🗣️ ภาษาอินโดนีเซียพื้นฐาน</h4>
+       <div class="grid grid-cols-2 gap-2 text-sm">
+        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Selamat pagi (เซอ-ลา-มัต ปา-กี) </span> <span class="text-subtle">— สวัสดี</span></div>
+        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Terima kasih (เตอ-ริ-มา-กา-ซิห์) </span> <span class="text-subtle">— ขอบคุณ</span></div>
+        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Berapa harganya? (เบอ-รา-ปา ฮาร์-กัน-ยา) </span> <span class="text-subtle">— ราคาเท่าไหร่?</span></div>
+        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Sama-sama (ซามะ-ซามะ) </span> <span class="text-subtle">— ไม่เป็นไร/ยินดี</span></div>
+       </div>
+      </div>
+      <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
+       <h4 class="font-semibold text-brand-dark mb-2">📱 การสื่อสารและอินเทอร์เน็ต</h4>
+       <ul class="text-sm text-subtle space-y-1">
+        <li>• แนะนำซื้อ eSIM หรือ Roaming ก่อนเดินทาง</li>
+        <li>• สถานเอกอัครราชทูต ณ กรุงจาการ์ตา: +62 21 2932 8190 – 94</li>
+        <li>• โทรศัพท์ฉุกเฉิน (ตลอด 24 ชั่วโมง): +62 811 186 253</li>
+       </ul>
+      </div>
+     </div>
+
     </section>
 
     <!-- ========== WEATHER ========== -->
     <section id="sec-weather" class="tab-section fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-2">🌤️ สภาพอากาศ</h2>
-     <p class="text-sm text-subtle mb-6">คาดการณ์สภาพอากาศช่วง 8-15 พฤษภาคม 2569 • อ้างอิง: <a href="https://www.accuweather.com" target="_blank" rel="noopener noreferrer" class="text-brand underline">accuweather.com</a></p>
+     <p class="text-sm text-subtle mb-6">คาดการณ์สภาพอากาศช่วง 9-11 สิงหาคม 2569 • อ้างอิง: <a href="https://www.accuweather.com" target="_blank" rel="noopener noreferrer" class="text-brand underline">accuweather.com</a></p>
      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">8 พ.ค. (วันที่ 1)</p><p class="font-semibold text-sm">กรุงเทพฯ</p><div class="weather-icon my-2">🌙</div><p class="text-2xl font-bold text-brand-dark">33°<span class="text-base font-normal text-subtle">/27°C</span></p><p class="text-xs text-subtle mt-1">ร้อนชื้น เมฆบางส่วน</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 70%</span><span>🌧️ 30%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">9 พ.ค. (วันที่ 2)</p><p class="font-semibold text-sm">บาร์เซโลนา</p><div class="weather-icon my-2">⛅</div><p class="text-2xl font-bold text-brand-dark">22°<span class="text-base font-normal text-subtle">/15°C</span></p><p class="text-xs text-subtle mt-1">อากาศอบอุ่น มีเมฆบ้าง</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 55%</span><span>🌧️ 15%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">10 พ.ค. (วันที่ 3)</p><p class="font-semibold text-sm">บาร์เซโลนา</p><div class="weather-icon my-2">☀️</div><p class="text-2xl font-bold text-brand-dark">24°<span class="text-base font-normal text-subtle">/16°C</span></p><p class="text-xs text-subtle mt-1">แดดออก อากาศดี</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 50%</span><span>🌧️ 10%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">11 พ.ค. (วันที่ 4)</p><p class="font-semibold text-sm">ซาราโกซ่า</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">25°<span class="text-base font-normal text-subtle">/13°C</span></p><p class="text-xs text-subtle mt-1">แดดจัด อากาศแห้ง</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 40%</span><span>🌧️ 5%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">12 พ.ค. (วันที่ 5)</p><p class="font-semibold text-sm">มาดริด</p><div class="weather-icon my-2">☀️</div><p class="text-2xl font-bold text-brand-dark">26°<span class="text-base font-normal text-subtle">/14°C</span></p><p class="text-xs text-subtle mt-1">แดดออก อากาศสดใส</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 35%</span><span>🌧️ 5%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">13 พ.ค. (วันที่ 6)</p><p class="font-semibold text-sm">มาดริด</p><div class="weather-icon my-2">⛅</div><p class="text-2xl font-bold text-brand-dark">24°<span class="text-base font-normal text-subtle">/13°C</span></p><p class="text-xs text-subtle mt-1">มีเมฆบางส่วน</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 45%</span><span>🌧️ 20%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">14 พ.ค. (วันที่ 7)</p><p class="font-semibold text-sm">มาดริด</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">25°<span class="text-base font-normal text-subtle">/14°C</span></p><p class="text-xs text-subtle mt-1">อากาศดี แดดอ่อน</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 40%</span><span>🌧️ 10%</span></div></div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">15 พ.ค. (วันที่ 8)</p><p class="font-semibold text-sm">กรุงเทพฯ</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">34°<span class="text-base font-normal text-subtle">/27°C</span></p><p class="text-xs text-subtle mt-1">ร้อนชื้น</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 70%</span><span>🌧️ 40%</span></div></div>
+      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">9 ส.ค. (วันที่ 1)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">☀️</div><p class="text-2xl font-bold text-brand-dark">29°<span class="text-base font-normal text-subtle">/21°C</span></p><p class="text-xs text-subtle mt-1">แดดออก มีเมฆบางส่วน</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 84%</span><span>🌧️ 10%</span></div></div>
+      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">10 ส.ค. (วันที่ 2)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">30°<span class="text-base font-normal text-subtle">/22°C</span></p><p class="text-xs text-subtle mt-1">แดดจัดเป็นส่วนใหญ่</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 85%</span><span>🌧️ 5%</span></div></div>
+      <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">11 ส.ค. (วันที่ 3)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">31°<span class="text-base font-normal text-subtle">/22°C</span></p><p class="text-xs text-subtle mt-1">แดดจัดเป็นส่วนใหญ่</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 84%</span><span>🌧️ 5%</span></div></div>
      </div>
      <div class="mt-6 bg-brand-50 border border-brand/10 rounded-2xl p-5">
-      <h4 class="font-semibold text-brand-dark mb-2">📊 สรุปอากาศสเปนช่วงพฤษภาคม</h4>
-      <div class="grid md:grid-cols-3 gap-4 text-sm">
-       <div><p class="font-medium">🏛️ บาร์เซโลนา</p><p class="text-subtle">อุณหภูมิ 15-24°C อากาศอบอุ่นสบาย ชายทะเลลมเย็น</p></div>
-       <div><p class="font-medium">⛪ ซาราโกซ่า</p><p class="text-subtle">อุณหภูมิ 13-25°C อากาศแห้ง แดดแรง กลางคืนเย็น</p></div>
-       <div><p class="font-medium">👑 มาดริด</p><p class="text-subtle">อุณหภูมิ 13-26°C อากาศแห้ง แดดแรง เช้า-ค่ำเย็นสบาย</p></div>
+      <h4 class="font-semibold text-brand-dark mb-2">📊 สรุปอากาศบาหลีช่วงสิงหาคม</h4>
+      <div class="grid md:grid-cols-1 gap-4 text-sm">
+       <div><p class="font-medium">🏝️ เด็นปาซาร์ / บาหลีตอนใต้</p><p class="text-subtle">อุณหภูมิเฉลี่ย 21-31°C ช่วงสิงหาคมเป็นฤดูแห้ง ฝนน้อย แดดจัด ความชื้นสูง ท้องฟ้าโปร่งเป็นส่วนใหญ่ เหมาะแก่การท่องเที่ยวกลางแจ้ง</p></div>
       </div>
      </div>
-     <p class="text-xs text-subtle mt-4 italic">* ข้อมูลสภาพอากาศเป็นการคาดการณ์โดยประมาณ กรุณาตรวจสอบอีกครั้งก่อนเดินทาง</p>
+     <p class="text-xs text-subtle mt-4 italic">* ข้อมูลสภาพอากาศเป็นการคาดการณ์โดยประมาณจาก AccuWeather กรุณาตรวจสอบอีกครั้งก่อนเดินทาง</p>
     </section>
 
     <!-- ========== CLOTHING ========== -->
@@ -833,102 +563,43 @@ Park)</p>
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">👔 คำแนะนำการแต่งกาย</h2>
      <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10 mb-6">
       <h3 class="font-semibold text-brand-dark mb-2">🌡️ สภาพอากาศโดยรวม</h3>
-      <p class="text-sm text-subtle">สเปนช่วงเดือนพฤษภาคม อากาศอบอุ่น กลางวัน 22-26°C กลางคืนเย็นลง 13-16°C แนะนำแต่งกายแบบ <strong>Layering (หลายชั้น)</strong> เพื่อปรับตามอุณหภูมิ</p>
+      <p class="text-sm text-subtle">บาหลีช่วงเดือนสิงหาคม อากาศร้อนชื้น กลางวัน 29-31°C กลางคืนลดลงเล็กน้อย 21-22°C อากาศแห้ง แดดจัดและฝนน้อย แนะนำแต่งกายให้ระบายอากาศได้ดีและพร้อมเสื้อคลุมบางสำหรับสถานที่สักการะ</p>
      </div>
      <div class="grid md:grid-cols-2 gap-4 mb-6">
       <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
        <h4 class="font-semibold text-brand-dark mb-3">☀️ เสื้อผ้าสำหรับกลางวัน</h4>
        <ul class="text-sm space-y-2">
         <li class="flex items-start gap-2"><span>👕</span> เสื้อยืดแขนสั้น หรือเสื้อเชิ้ตบาง ระบายอากาศดี</li>
-        <li class="flex items-start gap-2"><span>👖</span> กางเกงขายาวผ้าบาง หรือกระโปรงยาว</li>
-        <li class="flex items-start gap-2"><span>👟</span> รองเท้าผ้าใบสวมสบาย (เดินเยอะมาก!)</li>
+        <li class="flex items-start gap-2"><span>👖</span> กางเกง/กระโปรงคลุมเข่า (สำหรับเข้าวัด)</li>
+        <li class="flex items-start gap-2"><span>👟</span> รองเท้าผ้าใบหรือรองเท้าแตะสวมสบาย</li>
         <li class="flex items-start gap-2"><span>🧢</span> หมวกกันแดด</li>
         <li class="flex items-start gap-2"><span>🕶️</span> แว่นกันแดด</li>
        </ul>
       </div>
       <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-3">🌙 เสื้อผ้าสำหรับตอนเย็น-ค่ำ</h4>
+       <h4 class="font-semibold text-brand-dark mb-3">🙏 เสื้อผ้าสำหรับเข้าวัด</h4>
        <ul class="text-sm space-y-2">
-        <li class="flex items-start gap-2"><span>🧥</span> แจ็คเก็ตบางหรือเสื้อคลุมน้ำหนักเบา (จำเป็นมาก!)</li>
-        <li class="flex items-start gap-2"><span>🧣</span> ผ้าพันคอบาง (สำหรับลมเย็น)</li>
-        <li class="flex items-start gap-2"><span>🧤</span> เสื้อแขนยาวสำหรับชมฟุตบอลตอนค่ำ</li>
+        <li class="flex items-start gap-2"><span>👗</span> เตรียมผ้าซารองหรือผ้าคลุมเข่า (บางวัดมีให้เช่า/ยืม)</li>
+        <li class="flex items-start gap-2"><span>🧣</span> ผ้าคาดเอวสำหรับเข้าวัดฮินดู</li>
+        <li class="flex items-start gap-2"><span>👕</span> เสื้อมีแขน ไม่เปิดหัวไหล่มากเกินไป</li>
        </ul>
       </div>
      </div>
      <h3 class="font-semibold text-brand-dark text-lg mb-3">📅 แนะนำตามรายวัน</h3>
      <div class="space-y-3">
-      <div class="bg-white border-l-4 border-brand rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 2-3 | บาร์เซโลนา (22-24°C)</p><p class="text-xs text-subtle mt-1">👕 เสื้อยืด + กางเกงขายาว + รองเท้าผ้าใบ / 🧥 แจ็คเก็ตบางสำหรับชมฟุตบอลตอนค่ำ</p></div>
-      <div class="bg-white border-l-4 border-orange-400 rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 4 | ซาราโกซ่า (13-25°C)</p><p class="text-xs text-subtle mt-1">👕 เสื้อยืด + เสื้อคลุม / 🧢 หมวกกันแดด + ครีมกันแดด (แดดแรง)</p></div>
-      <div class="bg-white border-l-4 border-red-500 rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 5 | มาดริด (14-26°C)</p><p class="text-xs text-subtle mt-1">🧥 พกแจ็คเก็ตไปด้วย</p></div>
-      <div class="bg-white border-l-4 border-amber-400 rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 6 | มาดริด + Shopping (13-24°C)</p><p class="text-xs text-subtle mt-1">👟 รองเท้าสบายสำหรับเดินช้อปปิ้ง / 🎒 กระเป๋าสำรองสำหรับใส่ของที่ซื้อ</p></div>
-      <div class="bg-white border-l-4 border-brand-dark rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 7 | มาดริด → สนามบิน (14-25°C)</p><p class="text-xs text-subtle mt-1">👕 แต่งกายสบายสำหรับเดินทาง / 🧥 พกแจ็คเก็ตบนเครื่องบิน (เครื่องเย็น)</p></div>
+      <div class="bg-white border-l-4 border-brand rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 1 | บาหลี - วัดอูลูวาตู (21-29°C)</p><p class="text-xs text-subtle mt-1">👕 เสื้อยืด + กางเกงขายาวหรือผ้าซารอง (สำหรับเข้าวัด) / 🕶️ แว่นกันแดด + หมวก</p></div>
+      <div class="bg-white border-l-4 border-orange-400 rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 2 | วัดเบซากิห์ - ตีร์ต๊ะเอ็มเปิ้ล (22-30°C)</p><p class="text-xs text-subtle mt-1">👕 เสื้อผ้าสบาย ระบายอากาศ / 👖 เตรียมผ้าคลุมเข่าและผ้าคาดเอวสำหรับพิธีกรรม / 🧴 ครีมกันแดด</p></div>
+      <div class="bg-white border-l-4 border-brand-dark rounded-r-xl p-4"><p class="font-semibold text-sm">วันที่ 3 | บาหลี → สนามบิน (22-31°C)</p><p class="text-xs text-subtle mt-1">👕 แต่งกายสบายสำหรับเดินทาง / 🧥 พกเสื้อคลุมบางขึ้นเครื่อง (เครื่องเย็น)</p></div>
      </div>
      <div class="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-5">
       <h4 class="font-semibold text-amber-800 mb-2">🎒 สิ่งที่ควรพกติดตัว</h4>
       <div class="grid grid-cols-2 gap-2 text-sm">
        <div class="flex items-center gap-2"><span>🧴</span> ครีมกันแดด SPF 50+</div>
-       <div class="flex items-center gap-2"><span>🧥</span> แจ็คเก็ตบางน้ำหนักเบา</div>
+       <div class="flex items-center gap-2"><span>🧥</span> เสื้อคลุมบางน้ำหนักเบา</div>
        <div class="flex items-center gap-2"><span>☂️</span> ร่มพับขนาดเล็ก</div>
        <div class="flex items-center gap-2"><span>🔌</span> Adapter ปลั๊กแบบ C/F</div>
        <div class="flex items-center gap-2"><span>💊</span> ยาประจำตัว</div>
        <div class="flex items-center gap-2"><span>🎒</span> กระเป๋าสำรองพับได้</div>
-      </div>
-     </div>
-    </section>
-
-    <!-- ========== TIPS ========== -->
-    <section id="sec-tips" class="tab-section fade-in">
-     <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">💡 เกร็ดน่ารู้</h2>
-     <div class="space-y-4">
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-2">🍽️ วัฒนธรรมการกิน</h4>
-       <ul class="text-sm text-subtle space-y-1">
-        <li>• มื้อเที่ยง (Almuerzo): 14:00-16:00 / มื้อค่ำ (Cena): 21:00-23:00</li>
-        <li>• ทิปไม่บังคับ ปัดเศษหรือเพิ่ม 5-10% เป็นมารยาท</li>
-        <li>• Tapas คืออาหารจานเล็กๆ สั่งหลายจานแชร์กัน</li>
-        <li>• น้ำเปล่าบางร้านไม่ฟรี ต้องสั่ง "Agua" (น้ำขวด)</li>
-       </ul>
-      </div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-2">🗣️ ภาษาสเปนพื้นฐาน</h4>
-       <div class="grid grid-cols-2 gap-2 text-sm">
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Hola</span> <span class="text-subtle">— สวัสดี</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Gracias</span> <span class="text-subtle">— ขอบคุณ</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Por favor</span> <span class="text-subtle">— กรุณา</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">¿Cuánto?</span> <span class="text-subtle">— ราคาเท่าไร?</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">La cuenta</span> <span class="text-subtle">— เก็บเงิน</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">¿Dónde está...?</span> <span class="text-subtle">— ...อยู่ที่ไหน?</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Sí / No</span> <span class="text-subtle">— ใช่ / ไม่</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Perdón</span> <span class="text-subtle">— ขอโทษ</span></div>
-       </div>
-      </div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-2">🛍️ ช้อปปิ้ง &amp; Tax Refund</h4>
-       <ul class="text-sm text-subtle space-y-1">
-        <li>• ซื้อสินค้าตั้งแต่ €90.16 ขึ้นไปต่อร้าน สามารถขอ Tax Refund ได้</li>
-        <li>• ขอใบ Tax Free ที่ร้าน แล้วนำไปประทับตราที่สนามบินก่อนเช็คอิน</li>
-        <li>• La Roca Village (บาร์เซโลนา) &amp; Las Rozas Village (มาดริด) ลดราคา 30-70%</li>
-        <li>• แบรนด์แนะนำ: Zara, Mango, Loewe, Camper, Massimo Dutti</li>
-       </ul>
-      </div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-2">⚽ ดูบอล El Clásico</h4>
-       <ul class="text-sm text-subtle space-y-1">
-        <li>• Camp Nou จุผู้ชมกว่า 99,000 คน</li>
-        <li>• แนะนำไปถึงสนามล่วงหน้า 1-2 ชม.</li>
-        <li>• พกเฉพาะกระเป๋าขนาดเล็ก (มีข้อจำกัดด้านขนาด)</li>
-        <li>• ห้ามนำอาหารและเครื่องดื่มจากข้างนอกเข้า</li>
-        <li>• เตรียมแจ็คเก็ตสำหรับชมฟุตบอลตอนค่ำ</li>
-       </ul>
-      </div>
-      <div class="bg-white border border-brand/10 rounded-2xl p-5 card-hover">
-       <h4 class="font-semibold text-brand-dark mb-2">📱 การสื่อสารและอินเทอร์เน็ต</h4>
-       <ul class="text-sm text-subtle space-y-1">
-        <li>• แนะนำซื้อ eSIM หรือ Pocket WiFi ก่อนเดินทาง</li>
-        <li>• โรงแรมและร้านอาหารส่วนใหญ่มี WiFi ฟรี</li>
-        <li>• โทรฉุกเฉิน: 112 (ใช้ได้ทั่วยุโรป)</li>
-        <li>• สถานทูตไทย ณ กรุงมาดริด: +34 91 563 2903</li>
-       </ul>
       </div>
      </div>
     </section>
