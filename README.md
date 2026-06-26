@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
   <head>
-    <title>Hello, World!</title>
+    <title>Bali(FD) 3D2N 9-11 August 2026</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
