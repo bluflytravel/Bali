@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="th">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Bali(FD) 3D2N 9-11 August 2026</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -98,17 +100,22 @@ body { font-family: 'Prompt', sans-serif; }
 /* ===================== RESPONSIVE LAYOUT SYSTEM ===================== */
 /* Mobile-first base styles, then desktop overrides at md breakpoint (768px) */
 
-/* --- Navigation: mobile = 2-column grid menu, desktop = single scrollable row --- */
+/* --- Navigation: mobile = 3-column grid menu, desktop = single scrollable row --- */
 .nav-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.4rem;
 }
 .nav-btn {
-  white-space: nowrap;
+  white-space: normal;
   text-align: center;
-  font-size: 0.72rem;
-  padding: 0.5rem 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.15;
+  padding: 0.55rem 0.3rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .nav-grid {
@@ -117,8 +124,11 @@ body { font-family: 'Prompt', sans-serif; }
     gap: 0.4rem;
   }
   .nav-btn {
+    white-space: nowrap;
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
+    min-height: auto;
+    display: inline-block;
   }
 }
 
@@ -168,11 +178,19 @@ body { font-family: 'Prompt', sans-serif; }
 }
 .day-tab {
   text-align: center;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .day-tabs {
     display: flex;
     gap: 0.5rem;
+  }
+  .day-tab {
+    display: inline-flex;
+    min-height: auto;
   }
 }
 
