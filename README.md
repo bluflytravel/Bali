@@ -94,8 +94,121 @@ body { font-family: 'Prompt', sans-serif; }
   border-radius: 0.5rem;
   display: block;
 }
+
+/* ===================== RESPONSIVE LAYOUT SYSTEM ===================== */
+/* Mobile-first base styles, then desktop overrides at md breakpoint (768px) */
+
+/* --- Navigation: mobile = 2-column grid menu, desktop = single scrollable row --- */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+.nav-btn {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.72rem;
+  padding: 0.5rem 0.4rem;
+}
+@media (min-width: 768px) {
+  .nav-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.4rem;
+  }
+  .nav-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* --- Meal / attraction image pairs: stack on mobile, side-by-side on desktop --- */
+.img-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.img-pair > img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .img-pair {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .img-pair > img {
+    width: 50%;
+  }
+}
+
 @media (max-width: 640px) {
   .tour-img { aspect-ratio: 4 / 3; }
+}
+
+/* --- Timeline: tighter indent + smaller dot offset on mobile --- */
+.timeline-list {
+  margin-left: 0.25rem;
+  border-left-width: 2px;
+  padding-left: 1rem;
+}
+.timeline-dot-wrap { left: -21px; }
+@media (min-width: 768px) {
+  .timeline-list {
+    margin-left: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-dot-wrap { left: -31px; }
+}
+
+/* --- Day tabs (วันที่ 1/2/3): full-width equal split on mobile, pill row on desktop --- */
+.day-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.day-tab {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .day-tabs {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+/* --- Passenger room cards: 1 column mobile, 2 columns desktop --- */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .rooms-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+.room-card { margin-bottom: 0 !important; }
+
+/* --- Summary stat bar: 2x2 on mobile, single row on desktop --- */
+.stats-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+}
+
+/* --- Flight cards: stack the times vertically on very small screens --- */
+@media (max-width: 420px) {
+  .flight-row { flex-wrap: wrap; row-gap: 0.75rem; }
+  .flight-row .flight-arrow { order: 3; width: 100%; }
 }
 </style>
   <style>body { box-sizing: border-box; }</style>
@@ -105,15 +218,15 @@ body { font-family: 'Prompt', sans-serif; }
   <div id="app" class="h-full overflow-auto w-full">
 
    <!-- Hero -->
-   <header class="hero-bg text-white px-4 py-10 md:py-16 text-center relative z-10">
+   <header class="hero-bg text-white px-4 py-8 md:py-16 text-center relative z-10">
     <div class="max-w-4xl mx-auto relative z-10">
-     <p id="companyNameDisplay" class="text-sm tracking-[0.3em] uppercase opacity-80 mb-3">Bluefly Travel</p>
-     <div class="flex items-center justify-center gap-3 mb-4">
-      <h1 id="mainTitleDisplay" class="font-display text-3xl md:text-5xl font-bold leading-tight">Indonesia • Bali </h1>
-      <span class="text-4xl">✈️</span>
+     <p id="companyNameDisplay" class="text-xs md:text-sm tracking-[0.3em] uppercase opacity-80 mb-3">Bluefly Travel</p>
+     <div class="flex items-center justify-center gap-2 md:gap-3 mb-4">
+      <h1 id="mainTitleDisplay" class="font-display text-2xl md:text-5xl font-bold leading-tight">Indonesia • Bali </h1>
+      <span class="text-3xl md:text-4xl">✈️</span>
      </div>
-     <p class="text-lg md:text-xl opacity-90 font-light">ความเชื่อ &amp; ศรัทธา แห่งบาหลี</p>
-     <div class="flex items-center justify-center gap-4 mt-4 text-sm opacity-80">
+     <p class="text-base md:text-xl opacity-90 font-light">ความเชื่อ &amp; ศรัทธา แห่งบาหลี</p>
+     <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 mt-4 text-xs md:text-sm opacity-80">
       <span>📅 9 - 11 สิงหาคม 2569</span> <span>•</span> <span>3 วัน 2 คืน</span>
      </div>
      <div class="flex flex-wrap justify-center gap-2 mt-6">
@@ -126,13 +239,13 @@ body { font-family: 'Prompt', sans-serif; }
 
    <!-- Navigation -->
    <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-brand-light">
-    <div class="max-w-5xl mx-auto flex overflow-x-auto gap-1 p-2">
-     <button onclick="showSection('flights')" class="nav-btn active flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="flights"><span class="hidden md:inline">✈️ </span>เที่ยวบิน</button>
-     <button onclick="showSection('itinerary')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="itinerary"><span class="hidden md:inline">📋 </span>โปรแกรมทัวร์</button>
-     <button onclick="showSection('country')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="country"><span class="hidden md:inline">🐦‍🔥 </span>ข้อมูลประเทศ</button>
-     <button onclick="showSection('weather')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="weather"><span class="hidden md:inline">🌤️ </span>สภาพอากาศ</button>
-     <button onclick="showSection('clothing')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="clothing"><span class="hidden md:inline">👔 </span>การแต่งกาย</button>
-     <button onclick="showSection('Passenger')" class="nav-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium text-brand border border-brand/20" data-nav="Passenger">รายชื่อผู้เดินทาง</button>
+    <div class="max-w-5xl mx-auto nav-grid p-2">
+     <button onclick="showSection('flights')" class="nav-btn active rounded-full font-medium text-brand border border-brand/20" data-nav="flights"><span class="hidden md:inline">✈️ </span>เที่ยวบิน</button>
+     <button onclick="showSection('itinerary')" class="nav-btn rounded-full font-medium text-brand border border-brand/20" data-nav="itinerary"><span class="hidden md:inline">📋 </span>โปรแกรมทัวร์</button>
+     <button onclick="showSection('country')" class="nav-btn rounded-full font-medium text-brand border border-brand/20" data-nav="country"><span class="hidden md:inline">🐦‍🔥 </span>ข้อมูลประเทศ</button>
+     <button onclick="showSection('weather')" class="nav-btn rounded-full font-medium text-brand border border-brand/20" data-nav="weather"><span class="hidden md:inline">🌤️ </span>สภาพอากาศ</button>
+     <button onclick="showSection('clothing')" class="nav-btn rounded-full font-medium text-brand border border-brand/20" data-nav="clothing"><span class="hidden md:inline">👔 </span>การแต่งกาย</button>
+     <button onclick="showSection('Passenger')" class="nav-btn rounded-full font-medium text-brand border border-brand/20" data-nav="Passenger">รายชื่อผู้เดินทาง</button>
     </div>
    </nav>
 
@@ -156,19 +269,19 @@ body { font-family: 'Prompt', sans-serif; }
 
      <h3 class="font-semibold text-brand mb-3">🛫 ขาไป — 9 สิงหาคม 2569</h3>
      <div class="space-y-4 mb-8">
-      <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
+      <div class="bg-white border border-brand/20 rounded-2xl p-4 md:p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 396</span>
         <span class="text-sm text-subtle">Air Asia</span>
        </div>
-       <div class="flex items-center gap-4">
+       <div class="flex items-center gap-2 md:gap-4 flight-row">
         <div class="text-center">
-         <p class="text-2xl font-bold text-brand-dark">06:20</p>
+         <p class="text-xl md:text-2xl font-bold text-brand-dark">06:20</p>
          <p class="text-sm font-medium">DMK</p>
          <p class="text-xs text-subtle">กรุงเทพฯ</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
         </div>
-        <div class="flex-1 flex flex-col items-center">
+        <div class="flex-1 flex flex-col items-center flight-arrow">
          <p class="text-xs text-subtle mb-1">4 ชม. 20 นาที</p>
          <div class="w-full flex items-center">
           <div class="w-2 h-2 rounded-full bg-brand"></div>
@@ -177,7 +290,7 @@ body { font-family: 'Prompt', sans-serif; }
          </div>
         </div>
         <div class="text-center">
-         <p class="text-2xl font-bold text-brand-dark">11:40</p>
+         <p class="text-xl md:text-2xl font-bold text-brand-dark">11:40</p>
          <p class="text-sm font-medium">DPS</p>
          <p class="text-xs text-subtle">เด็นปาซาร์</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
@@ -188,19 +301,19 @@ body { font-family: 'Prompt', sans-serif; }
 
      <h3 class="font-semibold text-brand mb-3">🛫 ขากลับ — 11 สิงหาคม 2569</h3>
      <div class="space-y-4 mb-8">
-      <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
+      <div class="bg-white border border-brand/20 rounded-2xl p-4 md:p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 397</span>
         <span class="text-sm text-subtle">Air Asia</span>
        </div>
-       <div class="flex items-center gap-4">
+       <div class="flex items-center gap-2 md:gap-4 flight-row">
         <div class="text-center">
-         <p class="text-2xl font-bold text-brand-dark">12:10</p>
+         <p class="text-xl md:text-2xl font-bold text-brand-dark">12:10</p>
          <p class="text-sm font-medium">DPS</p>
          <p class="text-xs text-subtle">เด็นปาซาร์</p>
          <p class="text-xs text-subtle">11 ส.ค.</p>
         </div>
-        <div class="flex-1 flex flex-col items-center">
+        <div class="flex-1 flex flex-col items-center flight-arrow">
          <p class="text-xs text-subtle mb-1">4 ชม. 30 นาที</p>
          <div class="w-full flex items-center">
           <div class="w-2 h-2 rounded-full bg-brand"></div>
@@ -209,7 +322,7 @@ body { font-family: 'Prompt', sans-serif; }
          </div>
         </div>
         <div class="text-center">
-         <p class="text-2xl font-bold text-brand-dark">15:40</p>
+         <p class="text-xl md:text-2xl font-bold text-brand-dark">15:40</p>
          <p class="text-sm font-medium">DMK</p>
          <p class="text-xs text-subtle">กรุงเทพฯ</p>
          <p class="text-xs text-subtle">11 ส.ค.</p>
@@ -222,26 +335,26 @@ body { font-family: 'Prompt', sans-serif; }
     <!-- ========== ITINERARY ========== -->
     <section id="sec-itinerary" class="tab-section fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">📋 โปรแกรมทัวร์</h2>
-     <div class="flex flex-wrap gap-2 mb-6">
-      <button onclick="showDay(1)" class="day-tab active-day px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 1</button>
-      <button onclick="showDay(2)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 2</button>
-      <button onclick="showDay(3)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 3</button>
+     <div class="day-tabs mb-6">
+      <button onclick="showDay(1)" class="day-tab active-day px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 1</button>
+      <button onclick="showDay(2)" class="day-tab px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 2</button>
+      <button onclick="showDay(3)" class="day-tab px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 3</button>
      </div>
 
      <!-- ===== DAY 1 ===== -->
      <div id="day-1" class="day-content w-full">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
+      <div class="day-card bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">1</span>
+        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">1</span>
         <div>
-         <h3 class="font-semibold text-lg">วันอาทิตย์ที่ 9 สิงหาคม 2569</h3>
+         <h3 class="font-semibold text-base md:text-lg">วันอาทิตย์ที่ 9 สิงหาคม 2569</h3>
          <p class="text-sm text-subtle">กรุงเทพฯ → บาหลี (สาธารณรัฐอินโดนีเซีย)</p>
         </div>
        </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
+       <div class="space-y-4 timeline-list border-l-2 border-brand/20">
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <p class="text-sm"><span class="font-semibold text-brand">03:20 น.</span> — พบกันที่ สนามบินดอนเมือง อาคารผู้โดยสารขาออกระหว่างประเทศ ชั้น 3 ประตู 1 เคาน์เตอร์ สายการบิน แอร์เอเชีย (FD)</p>
         </div>
 
@@ -250,31 +363,31 @@ body { font-family: 'Prompt', sans-serif; }
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <p class="text-sm"><span class="font-semibold text-brand">06:20 น.</span> — ✈️ ออกเดินทางสู่ สนามบินงูระฮ์ไร โดยสายการบินแอร์เอเชีย (FD) เที่ยวบินที่ FD396</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <p class="text-sm"><span class="font-semibold text-brand">11:40 น.</span> — ✈️ คณะเดินทางถึง สนามบินงูระฮ์ไร สาธารณรัฐอินโดนีเซีย หลังผ่านพิธีการตรวจคนเข้าเมืองและศุลกากรเรียบร้อยแล้ว (เวลาท้องถิ่นเร็วกว่าประเทศไทย 1 ชั่วโมง)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารกลางวัน ณ ภัตตาคาร — Sentosa Restaurant</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
            <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
            <p>Steam Rice, Fried Fish, Chicken Tofu, Chicken Corn Soup, StirFried Tomato, Steam Prawn, Grilled Squid, Stir Fried with Garlic, Ice Tea</p>
-           <div class="mt-3 flex gap-3">
+           <div class="mt-3 img-pair">
             <img
                 src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0="
-                class="w-1/2 rounded-lg object-cover aspect-video"
+                class="rounded-lg object-cover aspect-video"
                 alt="Image 1">
 
             <img
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1"
-                class="w-1/2 rounded-lg object-cover aspect-video"
+                class="rounded-lg object-cover aspect-video"
                 alt="Image 2">
            </div>
           </div>
@@ -282,7 +395,7 @@ body { font-family: 'Prompt', sans-serif; }
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🙏 สวนวัฒนธรรมการูด้า วิษณุ กวนกานา (Garuda Wisnu Kencana Cultural
 Park)</p>
@@ -296,39 +409,39 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🙏 ทำพิธีบวงสรวงพระศิวะในปาง "รุทร" (Lord Rudra) ณ วัดอูลูวาตู (Uluwatu Temple)</p>
           <p class="text-subtle mt-1">ชาวฮินดูบาหลีสร้างวัดแห่งนี้ขึ้นเพื่ออุทิศถวายแด่พระศิวะในปางผู้ทำลายล้างสิ่งชั่วร้ายและปกป้องจักรวาล เชื่อกันว่าพลังของพระองค์ ณ หน้าผาแห่งนี้จะช่วยปกป้องเกาะบาหลีจากสิ่งอัปมงคลและภัยพิบัติทางทะเล ตัววัดถูกสร้างขึ้นในช่วงศตวรรษที่ 11 บนหน้าผาหินสูง 70 เมตร ที่ยื่นออกสู่ท้องทะเล โดยมีตำนานเล่าว่าหินที่เป็นฐานของตัววัดนั้นเป็นส่วนหนึ่งของเรือสำเภาที่กลายเป็นหิน วัดอูลูวาตู (Uluwatu Temple) ยังโด่งดังในเรื่อง โชว์ระบำเคจั๊ก (Kecak Dance) ระบำที่มีชื่อเสียงมากที่สุดในบาหลี ความอลังการของโชว์ที่ใช้นักแสดงกว่า 50 คน มาวาดลวดลายแสดงตามเนื้อเรื่องจากวรรณกรรมรามเกียรติ์ ในตอนที่พระรามยกพลทัพลิงมาช่วยนางสีดาที่เกาะลังกา พร้อมชมวิวพระอาทิตย์ตกดินของวัดอูลูวาตู (Uluwatu Temple) ที่ขึ้นชื่อว่าเป็นอีกหนึ่งจุดชมวิวพระอาทิตย์ตกที่สวยที่สุดอีกแห่งหนึ่งในบาหลี</p>
-          <div class="mt-3 flex gap-3">
+          <div class="mt-3 img-pair">
            <img
                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQu8M8HCeF6pvXzhmjZSCHiQ6iP54zPqQJQ&s"
-               class="w-1/2 rounded-lg object-cover aspect-video"
+               class="rounded-lg object-cover aspect-video"
                alt="Image 1">
 
            <img
                src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg"
-               class="w-1/2 rounded-lg object-cover aspect-video"
+               class="rounded-lg object-cover aspect-video"
                alt="Image 2">
           </div>
          </div>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารค่ำ ณ ภัตตาคาร — Jimbaran Bay Seafood</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
            <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
            <p>Soup, Grilled Fish, Grilled Crab, Grilled Prawn, Grilled clams, Crispy Squid, Steam Rice, Vegetable , Fruit</p>
-           <div class="mt-3 flex gap-3">
+           <div class="mt-3 img-pair">
             <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s"
-                class="w-1/2 rounded-lg object-cover aspect-video"
+                class="rounded-lg object-cover aspect-video"
                 alt="Image 1">
             <img
                 src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg"
-                class="w-1/2 rounded-lg object-cover aspect-video"
+                class="rounded-lg object-cover aspect-video"
                 alt="Image 2">
            </div>
           </div>
@@ -345,19 +458,19 @@ Park)</p>
 
 <!-- ===== DAY 2 ===== -->
 <div id="day-2" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
+      <div class="day-card bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">2</span>
+        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">2</span>
         <div>
-         <h3 class="font-semibold text-lg">วันจันทร์ที่ 10 สิงหาคม 2569</h3>
+         <h3 class="font-semibold text-base md:text-lg">วันจันทร์ที่ 10 สิงหาคม 2569</h3>
          <p class="text-sm text-subtle">บาหลี</p>
         </div>
         <span class="ml-auto text-2xl">🛕</span>
        </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
+       <div class="space-y-4 timeline-list border-l-2 border-brand/20">
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารเช้าในโรงแรม</p>
           <div>
@@ -366,27 +479,27 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🙏 ทำพิธีบวงสรวง พระพรหม, พระนารายณ์ และพระศิวะ ณ วัดเบซากิห์ (Besakih)</p>
           <p class="text-subtle mt-1">สร้างขึ้นเมื่อราว ค.ศ. 8 เป็นวัดเก่าแก่ดั้งเดิมมาตั้งแต่สมัยโบราณ โดยวัดจากอายุของหินแล้วอาจเก่าถึง2,000 ปี วัดแห่งนี้โดดเด่นไปด้วยสถาปัตยกรรมแบบฮินดู-บาหลี ทั้งโบสถ์ วิหาร ศาลาและรูปปั้นทวยเทพต่างๆ ภายในประกอบด้วยวัดเล็กวัดน้อยจำนวนมากวัดที่มีความสำคัญที่สุดในปุราเบซากิห์คือปุราเปนาทารัน อากุง (Pura Penataraa Aguan) เชื่อกันว่าที่นี่เป็นที่ประทับขององค์ไตรภูวนาถผู้เป็นใหญ่ในสามโลกคือ สวรรค์ มนุษย์ และบาดาล อยู่ตรงกลางเป็นไฮไลท์ ในช่วงประมาณ 7-8 โมงของวันที่ฟ้าเปิดสามารถมองเห็นวัดเบซากิห์ตั้งตระหง่านโดดเด่นท่ามกลางฉากหลังของภูเขาไฟกุนุง อากุงและที่นี่มีวิหารบูชาพระพรหม, พระนารายณ์ และพระศิวะ เทพเจ้าแห่งฮินดู ได้สักการะบูชาขอพรเหล่าเทพยดาเพื่อความเป็นสิริมงคล
 ปัดเป่าสิ่งชั่วร้ายอีกด้วย</p>
-          <div class="mt-3 flex gap-3">
+          <div class="mt-3 img-pair">
            <img
                src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg"
-               class="w-1/2 rounded-lg object-cover aspect-video"
+               class="rounded-lg object-cover aspect-video"
                alt="Image 1">
 
            <img
                src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg"
-               class="w-1/2 rounded-lg object-cover aspect-video"
+               class="rounded-lg object-cover aspect-video"
                alt="Image 2">
           </div>
          </div>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🙏 ทำพิธีบวงสรวง พระอินทร์ ณ วัดท่ามะแพง หรือ วัดตีร์ต๊ะเอ็มเปิ้ล (Tirta Empul Temple)</p>
           <p class="text-subtle mt-1">วัดนี้เป็นวัดฮินดูเก่าแก่ที่มีอายุมากกว่า 1,000 ปี (สร้างขึ้นประมาณ ค.ศ. 962) "บ่อน้ำ พุศักดิ์สิทธิ์ธรรมชาติ" ที่ผุดขึ้นมาจากใต้ดินซึ่งชาวบาหลีเชื่อว่าพระอินทร์เป็นผู้บันดาลให้เกิดขึ้นเพื่อรักษาบำบัดกองทัพเทพที่ถูกพิษจากอสูรการมามูที่นี่ไม่ได้มีแค่การกราบไหว้ แต่คือการทำ พิธี "Melukat" (เมอลูกัต) หรือพิธีชำระล้างร่างกายและจิตวิญญาณโดยการลงไปในสระน้ำและรองน้ำ จากท่อพุที่เรียงรายอยู่ให้ไหลผ่านศีรษะ 
@@ -400,7 +513,7 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารกลางวัน ณ ภัตตาคาร</p>
           <div>
@@ -409,7 +522,7 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🛍️ เดอะ คลันจัง บาหลี (The Keranjang Bali)</p>
           <p class="text-subtle mt-1">อิสระช็อปปิ้ง ณ เดอะ คลันจัง บาหลี (The Keranjang Bali) เป็นหนึ่งในแลนด์มาร์กและศูนย์รวมของฝากแห่งใหม่ที่โด่งดังมากในเกาะบาหลี สิ่งที่เป็นเอกลักษณ์ที่สุดของที่นี่คือ ตัวอาคารที่สร้างเป็นรูป "ตะกร้าสานขนาดยักษ์" ซึ่งสื่อถึงภาชนะที่คนบาหลีใช้ใส่ของฝากและสินค้าพื้นเมือง ชั้นบนของอาคารเป็นที่ตั้งของ Kampung Langit (หมู่บ้านลอยฟ้า) ซึ่งเป็นสวนวัฒนธรรมในร่ม (Cultural Indoor Theme Park) แห่งแรกของบาหลี</p>
@@ -420,7 +533,7 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารค่ำ ณ ภัตตาคาร — Beras Merah Restaurant</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
@@ -442,19 +555,19 @@ Park)</p>
 
      <!-- ===== DAY 3 ===== -->
      <div id="day-3" class="day-content" style="display:none;">
-      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
+      <div class="day-card bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">3</span>
+        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">3</span>
         <div>
-         <h3 class="font-semibold text-lg">วันอังคารที่ 11 สิงหาคม 2569</h3>
+         <h3 class="font-semibold text-base md:text-lg">วันอังคารที่ 11 สิงหาคม 2569</h3>
          <p class="text-sm text-subtle">บาหลี (สาธารณรัฐอินโดนีเซีย) → กรุงเทพฯ </p>
         </div>
         <span class="ml-auto text-2xl">✈️</span>
        </div>
-       <div class="space-y-4 ml-5 border-l-2 border-brand/20 pl-6">
+       <div class="space-y-4 timeline-list border-l-2 border-brand/20">
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารเช้าในโรงแรม</p>
           <div>
@@ -463,7 +576,7 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
           <p class="font-semibold">นำคณะเดินทางสู่ สนามบินงูระฮ์ไร</p>
           <div>
@@ -472,12 +585,12 @@ Park)</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <p class="text-sm"><span class="font-semibold text-brand">12:10 น.</span> — ✈️ ออกเดินทางสู่ สนามบินดอนเมือง โดยสายการบินแอร์เอเชีย (FD) เที่ยวบินที่ FD397</p>
         </div>
 
         <div class="relative">
-         <div class="timeline-dot absolute -left-[31px] top-1"></div>
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <p class="text-sm"><span class="font-semibold text-brand">15:40 น.</span> — ✈️ คณะเดินทางถึง กรุงเทพฯ โดยสวัสดิภาพ</p>
         </div>
        </div>
@@ -489,7 +602,7 @@ Park)</p>
     <!-- ========== COUNTRY INFO ========== -->
     <section id="sec-country" class="tab-section fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">🐦‍🔥 ข้อมูลประเทศอินโดนีเซีย</h2>
-     <div class="grid md:grid-cols-1 gap-4 mb-6">
+     <div class="grid md:grid-cols-2 gap-4 mb-6">
       <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
        <h3 class="font-semibold text-brand-dark mb-3 text-lg">🇮🇩 ข้อมูลทั่วไป</h3>
        <div class="space-y-2 text-sm">
@@ -509,6 +622,7 @@ Park)</p>
         <div class="flex justify-between"><span class="text-subtle">อัตราแลกเปลี่ยน (โดยประมาณ)</span><span class="font-medium">1 THB ≈ 0.00188 THB</span></div>
       </div>
       </div>
+     </div>
 
      <div class="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-5">
       <h4 class="font-semibold text-amber-800 mb-2">⚠️ สิ่งที่ควรรู้และมารยาททางวัฒนธรรม</h4>
@@ -519,13 +633,14 @@ Park)</p>
       </ul>
      </div>
 
+     <div class="grid md:grid-cols-2 gap-4 mt-6">
       <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
        <h4 class="font-semibold text-brand-dark mb-2">🗣️ ภาษาอินโดนีเซียพื้นฐาน</h4>
-       <div class="grid grid-cols-2 gap-2 text-sm">
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Selamat pagi (เซอ-ลา-มัต ปา-กี) </span> <span class="text-subtle">— สวัสดี</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Terima kasih (เตอ-ริ-มา-กา-ซิห์) </span> <span class="text-subtle">— ขอบคุณ</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Berapa harganya? (เบอ-รา-ปา ฮาร์-กัน-ยา) </span> <span class="text-subtle">— ราคาเท่าไหร่?</span></div>
-        <div class="bg-brand-50 rounded-lg p-2"><span class="font-medium">Sama-sama (ซามะ-ซามะ) </span> <span class="text-subtle">— ไม่เป็นไร/ยินดี</span></div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+        <div class="bg-white/60 rounded-lg p-2"><span class="font-medium">Selamat pagi (เซอ-ลา-มัต ปา-กี) </span> <span class="text-subtle">— สวัสดี</span></div>
+        <div class="bg-white/60 rounded-lg p-2"><span class="font-medium">Terima kasih (เตอ-ริ-มา-กา-ซิห์) </span> <span class="text-subtle">— ขอบคุณ</span></div>
+        <div class="bg-white/60 rounded-lg p-2"><span class="font-medium">Berapa harganya? (เบอ-รา-ปา ฮาร์-กัน-ยา) </span> <span class="text-subtle">— ราคาเท่าไหร่?</span></div>
+        <div class="bg-white/60 rounded-lg p-2"><span class="font-medium">Sama-sama (ซามะ-ซามะ) </span> <span class="text-subtle">— ไม่เป็นไร/ยินดี</span></div>
        </div>
       </div>
       <div class="bg-brand-50 rounded-2xl p-5 border border-brand/10">
@@ -544,7 +659,7 @@ Park)</p>
     <section id="sec-weather" class="tab-section fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-2">🌤️ สภาพอากาศ</h2>
      <p class="text-sm text-subtle mb-6">คาดการณ์สภาพอากาศช่วง 9-11 สิงหาคม 2569 • อ้างอิง: <a href="https://www.accuweather.com" target="_blank" rel="noopener noreferrer" class="text-brand underline">accuweather.com</a></p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">9 ส.ค. (วันที่ 1)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">☀️</div><p class="text-2xl font-bold text-brand-dark">29°<span class="text-base font-normal text-subtle">/21°C</span></p><p class="text-xs text-subtle mt-1">แดดออก มีเมฆบางส่วน</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 84%</span><span>🌧️ 10%</span></div></div>
       <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">10 ส.ค. (วันที่ 2)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">30°<span class="text-base font-normal text-subtle">/22°C</span></p><p class="text-xs text-subtle mt-1">แดดจัดเป็นส่วนใหญ่</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 85%</span><span>🌧️ 5%</span></div></div>
       <div class="bg-white border border-brand/10 rounded-2xl p-4 card-hover text-center"><p class="text-xs text-subtle">11 ส.ค. (วันที่ 3)</p><p class="font-semibold text-sm">เด็นปาซาร์ บาหลี</p><div class="weather-icon my-2">🌤️</div><p class="text-2xl font-bold text-brand-dark">31°<span class="text-base font-normal text-subtle">/22°C</span></p><p class="text-xs text-subtle mt-1">แดดจัดเป็นส่วนใหญ่</p><div class="flex justify-center gap-3 mt-2 text-xs text-subtle"><span>💧 84%</span><span>🌧️ 5%</span></div></div>
@@ -606,18 +721,18 @@ Park)</p>
 
     <!-- ========== PASSENGER ========== -->
     <section id="sec-Passenger" class="tab-section fade-in">
-     <div style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); border-radius: 1rem; padding: 2rem;">
+     <div style="background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); border-radius: 1rem; padding: 1.25rem;" class="md:!p-8">
       <div class="max-w-3xl mx-auto">
-       <header class="text-center mb-10">
+       <header class="text-center mb-8 md:mb-10">
         <div class="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);">
          <i data-lucide="plane" style="width:16px;height:16px;color:#60a5fa;"></i>
          <span class="text-xs font-semibold tracking-widest uppercase" style="color:#93c5fd;">Passenger name</span>
         </div>
-        <h1 class="font-display text-3xl md:text-4xl font-bold text-white mt-3">รายชื่อผู้เดินทาง</h1>
+        <h1 class="font-display text-2xl md:text-4xl font-bold text-white mt-3">รายชื่อผู้เดินทาง</h1>
         <p class="mt-2 text-sm" style="color:#94a3b8;">ข้อมูลห้องพักของผู้เดินทาง</p>
        </header>
        <style>
-        .room-card { background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85)); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .room-card { background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85)); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 1rem; padding: 1.25rem; }
         .room-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
         .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
         .dietary-badge { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
@@ -626,17 +741,19 @@ Park)</p>
         .guest-row + .guest-row { border-top: 1px dashed #e5e7eb; }
         .avatar { width: 33px; height: 33px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; color: #fff; }
        </style>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 1</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">1</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. THANAKRIT ITTIANAN</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#ec4899,#be185d);">2</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS POPPORN INGKATAWEERUT</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 2</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#10b981,#047857);">3</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. NIKOM TORRUNGRUEANGKIT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">4</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS PAWEENA BOONNAK</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 3</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">5</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. SORACHAI CHIAMSIRIWATTANA</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">6</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS TARA KARNTARA</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 4</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">7</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS AURAPAN CHANTAROJVANICH</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f43f5e,#e11d48);">8</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS THAWANRATH PHACHARAWITKAMON</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 5</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#a855f7,#9333ea);">9</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. NARIN BOVONRATTANAKOSOL</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">10</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">NAN MYA HNIN OO</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง (เมียนม่า)</span><span class="badge" style="background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;"><i data-lucide="tv" style="width:12px;height:12px;"></i>ไม่ดูบอล</span></div></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 6</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">11</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. KITTISAK SUVISUTTIMONTRE</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">12</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS ISSADAORN PAKTAWEE</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge" style="background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;"><i data-lucide="tv" style="width:12px;height:12px;"></i>ไม่ดูบอล</span></div></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 7</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#10b981,#047857);">13</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. APICHA CHANTARAWARAROJ</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#ec4899,#be185d);">14</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS TANYALUK HIRANKAIPHOT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 8</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">15</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. TEERATAN THAMMANICHANONT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">16</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MRS. SARANPHAT THAMMANICHANONT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 9</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f43f5e,#e11d48);">17</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS PANNAPHAT SUWANNAPHAN</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">18</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS THIDA NARKNIYOM</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
-       <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 10</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#a855f7,#9333ea);">19</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MASTER PATTRADIT CHANTAROJVANICH</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">20</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. SIRICHAI PUMKRACHANG</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
-       <div class="rounded-xl p-4 flex flex-wrap gap-6 justify-center text-sm" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+       <div class="rooms-grid mb-6">
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 1</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">1</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. THANAKRIT ITTIANAN</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#ec4899,#be185d);">2</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS POPPORN INGKATAWEERUT</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 2</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#10b981,#047857);">3</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. NIKOM TORRUNGRUEANGKIT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">4</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS PAWEENA BOONNAK</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 3</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">5</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. SORACHAI CHIAMSIRIWATTANA</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">6</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS TARA KARNTARA</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 4</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">7</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS AURAPAN CHANTAROJVANICH</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f43f5e,#e11d48);">8</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS THAWANRATH PHACHARAWITKAMON</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 5</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#a855f7,#9333ea);">9</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. NARIN BOVONRATTANAKOSOL</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">10</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">NAN MYA HNIN OO</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง (เมียนม่า)</span><span class="badge" style="background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;"><i data-lucide="tv" style="width:12px;height:12px;"></i>ไม่ดูบอล</span></div></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 6</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">11</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. KITTISAK SUVISUTTIMONTRE</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">12</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS ISSADAORN PAKTAWEE</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge" style="background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;"><i data-lucide="tv" style="width:12px;height:12px;"></i>ไม่ดูบอล</span></div></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 7</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#10b981,#047857);">13</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. APICHA CHANTARAWARAROJ</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#ec4899,#be185d);">14</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS TANYALUK HIRANKAIPHOT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 8</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">15</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. TEERATAN THAMMANICHANONT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">16</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MRS. SARANPHAT THAMMANICHANONT</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 9</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#f43f5e,#e11d48);">17</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS PANNAPHAT SUWANNAPHAN</p><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-xs text-gray-400">ผู้เดินทาง</span><span class="badge dietary-badge"><i data-lucide="leaf" style="width:12px;height:12px;"></i>ไม่ทานเนื้อ</span></div></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">18</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MISS THIDA NARKNIYOM</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
+        <div class="room-card"><div class="flex flex-wrap items-center gap-2 mb-4"><i data-lucide="bed-double" style="width:20px;height:20px;color:#1e40af;"></i><span class="font-bold text-gray-800 text-lg">ห้องที่ 10</span><span class="badge room-badge"><i data-lucide="door-open" style="width:12px;height:12px;"></i>Twin Room</span></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#a855f7,#9333ea);">19</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MASTER PATTRADIT CHANTAROJVANICH</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div><div class="guest-row"><div class="avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">20</div><div class="flex-1 min-w-0"><p class="font-semibold text-gray-800 text-sm md:text-base">MR. SIRICHAI PUMKRACHANG</p><p class="text-xs text-gray-400">ผู้เดินทาง</p></div></div></div>
+       </div>
+       <div class="rounded-xl p-4 stats-bar text-sm" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
         <div class="flex items-center gap-2 text-blue-300"><i data-lucide="users" style="width:16px;height:16px;"></i><span>ผู้เดินทางทั้งหมด <strong class="text-white">20</strong> ท่าน</span></div>
         <div class="flex items-center gap-2 text-blue-300"><i data-lucide="bed-double" style="width:16px;height:16px;"></i><span>ห้องพัก <strong class="text-white">10</strong> ห้อง</span></div>
         <div class="flex items-center gap-2 text-amber-300"><i data-lucide="utensils" style="width:16px;height:16px;"></i><span>ไม่ทานเนื้อ <strong class="text-white">6</strong> ท่าน</span></div>
