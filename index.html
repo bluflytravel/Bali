@@ -458,8 +458,8 @@ body { font-family: 'Prompt', sans-serif; }
            <p>Steam Rice, Fried Fish, Chicken Tofu, Chicken Corn Soup, StirFried Tomato, Steam Prawn, Grilled Squid, Stir Fried with Garlic, Ice Tea</p>
           <div class="img-slider">
             <div class="img-slider-track">
-              <div class="img-slide"><img src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0=" loading="lazy" alt="Stromstad 1"></div>
-              <div class="img-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1" loading="lazy" alt="Stromstad 2"></div>
+              <div class="img-slide"><img src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0=" loading="lazy" alt="Sentosa 1"></div>
+              <div class="img-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1" loading="lazy" alt="Sentosa 2"></div>
             </div>
             <div class="img-slider-dots"><span class="active"></span><span></span></div>
             <div class="img-slider-counter">1/2</div>
@@ -488,9 +488,9 @@ Park)</p>
           <p class="text-subtle mt-1">ชาวฮินดูบาหลีสร้างวัดแห่งนี้ขึ้นเพื่ออุทิศถวายแด่พระศิวะในปางผู้ทำลายล้างสิ่งชั่วร้ายและปกป้องจักรวาล เชื่อกันว่าพลังของพระองค์ ณ หน้าผาแห่งนี้จะช่วยปกป้องเกาะบาหลีจากสิ่งอัปมงคลและภัยพิบัติทางทะเล ตัววัดถูกสร้างขึ้นในช่วงศตวรรษที่ 11 บนหน้าผาหินสูง 70 เมตร ที่ยื่นออกสู่ท้องทะเล โดยมีตำนานเล่าว่าหินที่เป็นฐานของตัววัดนั้นเป็นส่วนหนึ่งของเรือสำเภาที่กลายเป็นหิน วัดอูลูวาตู (Uluwatu Temple) ยังโด่งดังในเรื่อง โชว์ระบำเคจั๊ก (Kecak Dance) ระบำที่มีชื่อเสียงมากที่สุดในบาหลี ความอลังการของโชว์ที่ใช้นักแสดงกว่า 50 คน มาวาดลวดลายแสดงตามเนื้อเรื่องจากวรรณกรรมรามเกียรติ์ ในตอนที่พระรามยกพลทัพลิงมาช่วยนางสีดาที่เกาะลังกา พร้อมชมวิวพระอาทิตย์ตกดินของวัดอูลูวาตู (Uluwatu Temple) ที่ขึ้นชื่อว่าเป็นอีกหนึ่งจุดชมวิวพระอาทิตย์ตกที่สวยที่สุดอีกแห่งหนึ่งในบาหลี</p>
           <div class="img-slider">
             <div class="img-slider-track">
-              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/12/Iconic-Bali-Temple-Named-Top-Quality-Tourism-Destination-In-Indonesia.jpg" loading="lazy" alt="Stromstad 1"></div>
-              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/08/Preservation-Efforts-To-Balis-Uluwatu-Temple-Will-Encourage-More-Visits.jpg" loading="lazy" alt="Stromstad 1"></div>              
-              <div class="img-slide"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg" loading="lazy" alt="Stromstad 2"></div>
+              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/12/Iconic-Bali-Temple-Named-Top-Quality-Tourism-Destination-In-Indonesia.jpg" loading="lazy" alt="Uluwatu 1"></div>
+              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/08/Preservation-Efforts-To-Balis-Uluwatu-Temple-Will-Encourage-More-Visits.jpg" loading="lazy" alt="Uluwatu 2"></div>              
+              <div class="img-slide"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg" loading="lazy" alt="Uluwatu 3"></div>
             </div>
             <div class="img-slider-dots"><span class="active"></span><span></span></div>
             <div class="img-slider-counter">1/3</div>
@@ -508,8 +508,8 @@ Park)</p>
            <p>Soup, Grilled Fish, Grilled Crab, Grilled Prawn, Grilled clams, Crispy Squid, Steam Rice, Vegetable , Fruit</p>
           <div class="img-slider">
             <div class="img-slider-track">
-              <div class="img-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s" loading="lazy" alt="Stromstad 1"></div>
-              <div class="img-slide"><img src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg" loading="lazy" alt="Stromstad 2"></div>
+              <div class="img-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s" loading="lazy" alt="Jimbaran 1"></div>
+              <div class="img-slide"><img src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg" loading="lazy" alt="Jimbaran 2"></div>
             </div>
             <div class="img-slider-dots"><span class="active"></span><span></span></div>
             <div class="img-slider-counter">1/2</div>
@@ -555,8 +555,8 @@ Park)</p>
 ปัดเป่าสิ่งชั่วร้ายอีกด้วย</p>
           <div class="img-slider">
             <div class="img-slider-track">
-              <div class="img-slide"><img src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg" loading="lazy" alt="Stromstad 1"></div>
-              <div class="img-slide"><img src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg" loading="lazy" alt="Stromstad 2"></div>
+              <div class="img-slide"><img src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg" loading="lazy" alt="Besakih 1"></div>
+              <div class="img-slide"><img src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg" loading="lazy" alt="Besakih 2"></div>
             </div>
             <div class="img-slider-dots"><span class="active"></span><span></span></div>
             <div class="img-slider-counter">1/2</div>
