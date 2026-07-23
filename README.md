@@ -287,19 +287,19 @@ body { font-family: 'Prompt', sans-serif; }
 
      <h3 class="font-semibold text-brand mb-3">🛫 ขาไป — 9 สิงหาคม 2569</h3>
      <div class="space-y-4 mb-8">
-      <div class="bg-white border border-brand/20 rounded-2xl p-4 md:p-5 card-hover">
+      <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 396</span>
         <span class="text-sm text-subtle">Air Asia</span>
        </div>
-       <div class="flex items-center gap-2 md:gap-4 flight-row">
+       <div class="flex items-center gap-4">
         <div class="text-center">
-         <p class="text-xl md:text-2xl font-bold text-brand-dark">06:20</p>
+         <p class="text-2xl font-bold text-brand-dark">06:20</p>
          <p class="text-sm font-medium">DMK</p>
          <p class="text-xs text-subtle">กรุงเทพฯ</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
         </div>
-        <div class="flex-1 flex flex-col items-center flight-arrow">
+        <div class="flex-1 flex flex-col items-center">
          <p class="text-xs text-subtle mb-1">4 ชม. 20 นาที</p>
          <div class="w-full flex items-center">
           <div class="w-2 h-2 rounded-full bg-brand"></div>
@@ -308,7 +308,7 @@ body { font-family: 'Prompt', sans-serif; }
          </div>
         </div>
         <div class="text-center">
-         <p class="text-xl md:text-2xl font-bold text-brand-dark">11:40</p>
+         <p class="text-2xl font-bold text-brand-dark">11:40</p>
          <p class="text-sm font-medium">DPS</p>
          <p class="text-xs text-subtle">เด็นปาซาร์</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
@@ -319,19 +319,19 @@ body { font-family: 'Prompt', sans-serif; }
 
      <h3 class="font-semibold text-brand mb-3">🛫 ขากลับ — 11 สิงหาคม 2569</h3>
      <div class="space-y-4 mb-8">
-      <div class="bg-white border border-brand/20 rounded-2xl p-4 md:p-5 card-hover">
+      <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 397</span>
         <span class="text-sm text-subtle">Air Asia</span>
        </div>
-       <div class="flex items-center gap-2 md:gap-4 flight-row">
+       <div class="flex items-center gap-4">
         <div class="text-center">
          <p class="text-xl md:text-2xl font-bold text-brand-dark">12:10</p>
          <p class="text-sm font-medium">DPS</p>
          <p class="text-xs text-subtle">เด็นปาซาร์</p>
          <p class="text-xs text-subtle">11 ส.ค.</p>
         </div>
-        <div class="flex-1 flex flex-col items-center flight-arrow">
+        <div class="flex-1 flex flex-col items-center">
          <p class="text-xs text-subtle mb-1">4 ชม. 30 นาที</p>
          <div class="w-full flex items-center">
           <div class="w-2 h-2 rounded-full bg-brand"></div>
