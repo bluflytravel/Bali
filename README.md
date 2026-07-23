@@ -228,6 +228,64 @@ body { font-family: 'Prompt', sans-serif; }
   .flight-row { flex-wrap: wrap; row-gap: 0.75rem; }
   .flight-row .flight-arrow { order: 3; width: 100%; }
 }
+
+/* --- Image slider: swipeable, one large image at a time --- */
+.img-slider {
+  position: relative;
+  margin-top: 0.75rem;
+}
+.img-slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.75rem;
+  scrollbar-width: none;
+}
+.img-slider-track::-webkit-scrollbar { display: none; }
+.img-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.img-slide img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.img-slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.img-slider-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.55);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.img-slider-dots span.active {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+.img-slider-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(15,23,42,0.55);
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  pointer-events: none;
+}
 </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -354,17 +412,17 @@ body { font-family: 'Prompt', sans-serif; }
     <!-- ========== ITINERARY ========== -->
     <section id="sec-itinerary" class="tab-section fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">📋 โปรแกรมทัวร์</h2>
-     <div class="day-tabs mb-6">
-      <button onclick="showDay(1)" class="day-tab active-day px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 1</button>
-      <button onclick="showDay(2)" class="day-tab px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 2</button>
-      <button onclick="showDay(3)" class="day-tab px-2 md:px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 3</button>
+     <div class="flex flex-wrap gap-2 mb-6">
+      <button onclick="showDay(1)" class="day-tab active-day px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 1</button>
+      <button onclick="showDay(2)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 2</button>
+      <button onclick="showDay(3)" class="day-tab px-4 py-2 text-sm font-medium rounded-full border border-brand/20">วันที่ 3</button>
      </div>
 
      <!-- ===== DAY 1 ===== -->
      <div id="day-1" class="day-content w-full">
-      <div class="day-card bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-brand/10">
+      <div class="day-card bg-white rounded-2xl p-6 shadow-sm border border-brand/10">
        <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">1</span>
+        <span class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">1</span>
         <div>
          <h3 class="font-semibold text-base md:text-lg">วันอาทิตย์ที่ 9 สิงหาคม 2569</h3>
          <p class="text-sm text-subtle">กรุงเทพฯ → บาหลี (สาธารณรัฐอินโดนีเซีย)</p>
@@ -391,27 +449,23 @@ body { font-family: 'Prompt', sans-serif; }
          <p class="text-sm"><span class="font-semibold text-brand">11:40 น.</span> — ✈️ คณะเดินทางถึง สนามบินงูระฮ์ไร สาธารณรัฐอินโดนีเซีย หลังผ่านพิธีการตรวจคนเข้าเมืองและศุลกากรเรียบร้อยแล้ว (เวลาท้องถิ่นเร็วกว่าประเทศไทย 1 ชั่วโมง)</p>
         </div>
 
-        <div class="relative">
-         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
-         <div class="text-sm">
+      <div class="relative">
+        <div class="timeline-dot absolute -left-[31px] top-1"></div>
+        <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารกลางวัน ณ ภัตตาคาร — Sentosa Restaurant</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
            <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
            <p>Steam Rice, Fried Fish, Chicken Tofu, Chicken Corn Soup, StirFried Tomato, Steam Prawn, Grilled Squid, Stir Fried with Garlic, Ice Tea</p>
-           <div class="mt-3 img-pair">
-            <img
-                src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0="
-                class="rounded-lg object-cover aspect-video"
-                alt="Image 1">
-
-            <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1"
-                class="rounded-lg object-cover aspect-video"
-                alt="Image 2">
-           </div>
+          <div class="img-slider">
+            <div class="img-slider-track">
+              <div class="img-slide"><img src="https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nL0cwMVhBa3YxUW9leXFBYVN6SVJlRkEiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0MCwiaGVpZ2h0Ijo2NDAsImZpdCI6Imluc2lkZSJ9LCJyb3RhdGUiOm51bGwsInRvRm9ybWF0IjogIndlYnAifX0=" loading="lazy" alt="Stromstad 1"></div>
+              <div class="img-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d5/92/85/caption.jpg?w=900&h=500&s=1" loading="lazy" alt="Stromstad 2"></div>
+            </div>
+            <div class="img-slider-dots"><span class="active"></span><span></span></div>
+            <div class="img-slider-counter">1/2</div>
           </div>
-         </div>
         </div>
+      </div>
 
         <div class="relative">
          <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
@@ -421,7 +475,7 @@ Park)</p>
           <p class="text-subtle mt-1">ตามเทวตำนานฮินดู สถานที่แห่งนี้จำลองฉากสำคัญจากคัมภีร์มหาภารตะ ตอน "ครุฑยุดนาค"เพื่อแสวงหาน้ำ อมฤตมาไถ่พ้นความเป็นทาสให้แก่พระมารดาของพญาครุฑ จนทำ ให้พระวิษณุ
 ประทับใจในความกตัญญู และยอมรับพญาครุฑเป็นพาหนะคู่กายพร้อมประทานความเป็นอมตะให้
 นิยมขอพรในเรื่องความเจริญรุ่งเรืองในหน้าที่การงาน การเลื่อนขั้นเลื่อนตำแหน่ง การเสริมอำนาจบารมี และการปกป้องคุ้มครองจากภัยอันตรายหรือสิ่งอัปมงคล ทั้งยังเหมาะสำหรับผู้ที่ต้องการขอพรเรื่อง ความกตัญญู รุ่งเรือง</p>
-          <div class="mt-3">
+         <div class="mt-3">
            <img src="https://baligreentour.com/wp-content/uploads/2015/10/Garuda-Wisnu-Kencana-Cultural-Park-Bali-Tourist-Attractions-Bali-Green-Tour.webp" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
           </div>
          </div>
@@ -432,16 +486,15 @@ Park)</p>
          <div class="text-sm">
           <p class="font-semibold">🙏 ทำพิธีบวงสรวงพระศิวะในปาง "รุทร" (Lord Rudra) ณ วัดอูลูวาตู (Uluwatu Temple)</p>
           <p class="text-subtle mt-1">ชาวฮินดูบาหลีสร้างวัดแห่งนี้ขึ้นเพื่ออุทิศถวายแด่พระศิวะในปางผู้ทำลายล้างสิ่งชั่วร้ายและปกป้องจักรวาล เชื่อกันว่าพลังของพระองค์ ณ หน้าผาแห่งนี้จะช่วยปกป้องเกาะบาหลีจากสิ่งอัปมงคลและภัยพิบัติทางทะเล ตัววัดถูกสร้างขึ้นในช่วงศตวรรษที่ 11 บนหน้าผาหินสูง 70 เมตร ที่ยื่นออกสู่ท้องทะเล โดยมีตำนานเล่าว่าหินที่เป็นฐานของตัววัดนั้นเป็นส่วนหนึ่งของเรือสำเภาที่กลายเป็นหิน วัดอูลูวาตู (Uluwatu Temple) ยังโด่งดังในเรื่อง โชว์ระบำเคจั๊ก (Kecak Dance) ระบำที่มีชื่อเสียงมากที่สุดในบาหลี ความอลังการของโชว์ที่ใช้นักแสดงกว่า 50 คน มาวาดลวดลายแสดงตามเนื้อเรื่องจากวรรณกรรมรามเกียรติ์ ในตอนที่พระรามยกพลทัพลิงมาช่วยนางสีดาที่เกาะลังกา พร้อมชมวิวพระอาทิตย์ตกดินของวัดอูลูวาตู (Uluwatu Temple) ที่ขึ้นชื่อว่าเป็นอีกหนึ่งจุดชมวิวพระอาทิตย์ตกที่สวยที่สุดอีกแห่งหนึ่งในบาหลี</p>
-          <div class="mt-3 img-pair">
-           <img
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQu8M8HCeF6pvXzhmjZSCHiQ6iP54zPqQJQ&s"
-               class="rounded-lg object-cover aspect-video"
-               alt="Image 1">
-
-           <img
-               src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg"
-               class="rounded-lg object-cover aspect-video"
-               alt="Image 2">
+          <div class="img-slider">
+            <div class="img-slider-track">
+              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/12/Iconic-Bali-Temple-Named-Top-Quality-Tourism-Destination-In-Indonesia.jpg" loading="lazy" alt="Stromstad 1"></div>
+              <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/08/Preservation-Efforts-To-Balis-Uluwatu-Temple-Will-Encourage-More-Visits.jpg" loading="lazy" alt="Stromstad 1"></div>              
+              <div class="img-slide"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg" loading="lazy" alt="Stromstad 2"></div>
+            </div>
+            <div class="img-slider-dots"><span class="active"></span><span></span></div>
+            <div class="img-slider-counter">1/3</div>
+          </div>
           </div>
          </div>
         </div>
@@ -453,20 +506,17 @@ Park)</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
            <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
            <p>Soup, Grilled Fish, Grilled Crab, Grilled Prawn, Grilled clams, Crispy Squid, Steam Rice, Vegetable , Fruit</p>
-           <div class="mt-3 img-pair">
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s"
-                class="rounded-lg object-cover aspect-video"
-                alt="Image 1">
-            <img
-                src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg"
-                class="rounded-lg object-cover aspect-video"
-                alt="Image 2">
-           </div>
+          <div class="img-slider">
+            <div class="img-slider-track">
+              <div class="img-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvNUClVWYGjZ4kYhN8mSM1TyPBnQxLiu4gQ&s" loading="lazy" alt="Stromstad 1"></div>
+              <div class="img-slide"><img src="https://www.villa-finder.com/magazine/wp-content/uploads/2020/01/21543379033_e3bb6d3a85_k.jpg" loading="lazy" alt="Stromstad 2"></div>
+            </div>
+            <div class="img-slider-dots"><span class="active"></span><span></span></div>
+            <div class="img-slider-counter">1/2</div>
+          </div>
           </div>
          </div>
         </div>
-
        </div> <!-- space-y-4 -->
        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-center gap-2">
         <span>🏨</span>
@@ -503,20 +553,16 @@ Park)</p>
           <p class="font-semibold">🙏 ทำพิธีบวงสรวง พระพรหม, พระนารายณ์ และพระศิวะ ณ วัดเบซากิห์ (Besakih)</p>
           <p class="text-subtle mt-1">สร้างขึ้นเมื่อราว ค.ศ. 8 เป็นวัดเก่าแก่ดั้งเดิมมาตั้งแต่สมัยโบราณ โดยวัดจากอายุของหินแล้วอาจเก่าถึง2,000 ปี วัดแห่งนี้โดดเด่นไปด้วยสถาปัตยกรรมแบบฮินดู-บาหลี ทั้งโบสถ์ วิหาร ศาลาและรูปปั้นทวยเทพต่างๆ ภายในประกอบด้วยวัดเล็กวัดน้อยจำนวนมากวัดที่มีความสำคัญที่สุดในปุราเบซากิห์คือปุราเปนาทารัน อากุง (Pura Penataraa Aguan) เชื่อกันว่าที่นี่เป็นที่ประทับขององค์ไตรภูวนาถผู้เป็นใหญ่ในสามโลกคือ สวรรค์ มนุษย์ และบาดาล อยู่ตรงกลางเป็นไฮไลท์ ในช่วงประมาณ 7-8 โมงของวันที่ฟ้าเปิดสามารถมองเห็นวัดเบซากิห์ตั้งตระหง่านโดดเด่นท่ามกลางฉากหลังของภูเขาไฟกุนุง อากุงและที่นี่มีวิหารบูชาพระพรหม, พระนารายณ์ และพระศิวะ เทพเจ้าแห่งฮินดู ได้สักการะบูชาขอพรเหล่าเทพยดาเพื่อความเป็นสิริมงคล
 ปัดเป่าสิ่งชั่วร้ายอีกด้วย</p>
-          <div class="mt-3 img-pair">
-           <img
-               src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg"
-               class="rounded-lg object-cover aspect-video"
-               alt="Image 1">
-
-           <img
-               src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg"
-               class="rounded-lg object-cover aspect-video"
-               alt="Image 2">
+          <div class="img-slider">
+            <div class="img-slider-track">
+              <div class="img-slide"><img src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202001/Besakih%20-%20Image%20by%20Nitsa%20Holidays%20from%20Pixabay%20%281%29.jpg" loading="lazy" alt="Stromstad 1"></div>
+              <div class="img-slide"><img src="https://www.baliskytour.com/images/BesakihTempleTheGateOfHeavenTour.jpg" loading="lazy" alt="Stromstad 2"></div>
+            </div>
+            <div class="img-slider-dots"><span class="active"></span><span></span></div>
+            <div class="img-slider-counter">1/2</div>
+          </div>
           </div>
          </div>
-        </div>
-
         <div class="relative">
          <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
