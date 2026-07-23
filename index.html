@@ -272,6 +272,7 @@ body { font-family: 'Prompt', sans-serif; }
     <!-- ========== FLIGHTS ========== -->
     <section id="sec-flights" class="tab-section active fade-in">
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">✈️ ข้อมูลเที่ยวบิน</h2>
+
      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6">
       <h4 class="font-semibold text-amber-800 mb-3">🧳 ข้อมูลน้ำหนักกระเป๋า</h4>
       <div class="grid md:grid-cols-2 gap-4 text-sm">
@@ -290,13 +291,13 @@ body { font-family: 'Prompt', sans-serif; }
       <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 396</span>
-        <span class="text-sm text-subtle">Air Asia</span>
+        <span class="text-sm text-subtle">THAI AIRASIA</span>
        </div>
        <div class="flex items-center gap-4">
         <div class="text-center">
          <p class="text-2xl font-bold text-brand-dark">06:20</p>
          <p class="text-sm font-medium">DMK</p>
-         <p class="text-xs text-subtle">กรุงเทพฯ</p>
+         <p class="text-xs text-subtle">ดอนเมือง</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
         </div>
         <div class="flex-1 flex flex-col items-center">
@@ -310,7 +311,7 @@ body { font-family: 'Prompt', sans-serif; }
         <div class="text-center">
          <p class="text-2xl font-bold text-brand-dark">11:40</p>
          <p class="text-sm font-medium">DPS</p>
-         <p class="text-xs text-subtle">เด็นปาซาร์</p>
+         <p class="text-xs text-subtle">เดนปาซาร์</p>
          <p class="text-xs text-subtle">9 ส.ค.</p>
         </div>
        </div>
@@ -322,13 +323,13 @@ body { font-family: 'Prompt', sans-serif; }
       <div class="bg-white border border-brand/20 rounded-2xl p-5 card-hover">
        <div class="flex items-center gap-2 mb-3">
         <span class="bg-brand text-white px-3 py-1 rounded-full text-xs font-semibold">FD 397</span>
-        <span class="text-sm text-subtle">Air Asia</span>
+        <span class="text-sm text-subtle">THAI AIRASIA</span>
        </div>
        <div class="flex items-center gap-4">
         <div class="text-center">
-         <p class="text-xl md:text-2xl font-bold text-brand-dark">12:10</p>
+         <p class="text-2xl font-bold text-brand-dark">12:10</p>
          <p class="text-sm font-medium">DPS</p>
-         <p class="text-xs text-subtle">เด็นปาซาร์</p>
+         <p class="text-xs text-subtle">เดนปาซาร์</p>
          <p class="text-xs text-subtle">11 ส.ค.</p>
         </div>
         <div class="flex-1 flex flex-col items-center">
@@ -340,9 +341,9 @@ body { font-family: 'Prompt', sans-serif; }
          </div>
         </div>
         <div class="text-center">
-         <p class="text-xl md:text-2xl font-bold text-brand-dark">15:40</p>
+         <p class="text-2xl font-bold text-brand-dark">15:40</p>
          <p class="text-sm font-medium">DMK</p>
-         <p class="text-xs text-subtle">กรุงเทพฯ</p>
+         <p class="text-xs text-subtle">ดอนเมือง</p>
          <p class="text-xs text-subtle">11 ส.ค.</p>
         </div>
        </div>
