@@ -274,7 +274,7 @@ body { font-family: 'Prompt', sans-serif; }
      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-dark mb-6">✈️ ข้อมูลเที่ยวบิน</h2>
 
      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6">
-      <h4 class="font-semibold text-amber-800 mb-3">🧳 ข้อมูลน้ำหนักกระเป๋า</h4>
+      <h4 class="font-semibold text-amber-800 mb-3">🎒 ข้อมูลน้ำหนักกระเป๋า</h4>
       <div class="grid md:grid-cols-2 gap-4 text-sm">
        <div>
         <p class="font-semibold text-amber-900 mb-2">✈️ Economy Class</p>
