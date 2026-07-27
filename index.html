@@ -242,6 +242,14 @@ body { font-family: 'Prompt', sans-serif; }
   border-radius: 0.75rem;
   scrollbar-width: none;
 }
+.img-slider-track2 {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.75rem;
+  scrollbar-width: none;
+}
 .img-slider-track::-webkit-scrollbar { display: none; }
 .img-slide {
   flex: 0 0 100%;
@@ -492,10 +500,11 @@ Park)</p>
               <div class="img-slide"><img src="https://thebalisun.com/wp-content/uploads/2024/08/Preservation-Efforts-To-Balis-Uluwatu-Temple-Will-Encourage-More-Visits.jpg" loading="lazy" alt="Uluwatu Temple 2"></div>              
               <div class="img-slide"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/d2/af/00.jpg" loading="lazy" alt="Uluwatu Temple 3"></div>
             </div>
-            <div class="img-slider-dots"><span class="active"></span><span></span></div>
-            <div class="img-slider-counter">1/3</div>
-          </div>
-          </div>
+<div class="img-slider-dots">
+    <span class="active"></span><span></span><span></span>
+  </div>
+  <div class="img-slider-counter">1/3</div>
+</div>          </div>
          </div>
         </div>
 
@@ -836,6 +845,58 @@ function showDay(n) {
   if (dayEl) { dayEl.style.display = 'block'; dayEl.classList.remove('fade-in'); void dayEl.offsetWidth; dayEl.classList.add('fade-in'); }
   document.querySelectorAll('.day-tab')[n - 1]?.classList.add('active-day');
 }
+
+// Initialize swipeable image sliders: sync dots + counter on scroll,
+// and expose a scrollBySlide() helper for future prev/next controls.
+function initImgSliders(root) {
+  const sliders = (root || document).querySelectorAll('.img-slider');
+  sliders.forEach(slider => {
+    if (slider.dataset.sliderInit) return; // avoid double-binding
+    slider.dataset.sliderInit = '1';
+
+    const track = slider.querySelector('.img-slider-track');
+    const dots = slider.querySelectorAll('.img-slider-dots span');
+    const counter = slider.querySelector('.img-slider-counter');
+    const slideCount = slider.querySelectorAll('.img-slide').length;
+    if (!track || slideCount === 0) return;
+
+    let ticking = false;
+    const updateActive = () => {
+      const slideWidth = track.clientWidth || 1;
+      const idx = Math.round(track.scrollLeft / slideWidth);
+      const clamped = Math.max(0, Math.min(idx, slideCount - 1));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === clamped));
+      if (counter) counter.textContent = (clamped + 1) + '/' + slideCount;
+      ticking = false;
+    };
+
+    track.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActive);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Tapping a dot jumps to that slide
+    dots.forEach((dot, i) => {
+      dot.style.pointerEvents = 'auto';
+      dot.style.cursor = 'pointer';
+      dot.addEventListener('click', () => {
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      });
+    });
+
+    // Keep the correct slide in view on resize/orientation change
+    window.addEventListener('resize', () => {
+      const idx = Math.round(track.scrollLeft / (track.clientWidth || 1));
+      track.scrollTo({ left: idx * track.clientWidth, behavior: 'auto' });
+    });
+
+    updateActive();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => initImgSliders(document));
 
 const defaultConfig = {
   main_title: 'SPAIN EXPLORER',
