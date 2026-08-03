@@ -511,6 +511,16 @@ Park)</p>
         <div class="relative">
          <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
+          <p class="font-semibold">🙏 บทสวดบวงสรวงพระศิวะ</p>
+         <div class="mt-3">
+           <img src="https://img2.pic.in.th/c0598588d15586cc429e5ade04da4760.png" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
+          </div>
+         </div>
+        </div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
+         <div class="text-sm">
           <p class="font-semibold">🍽️ รับประทานอาหารค่ำ ณ ภัตตาคาร — Jimbaran Bay Seafood</p>
           <div class="meal-card rounded-lg p-3 mt-2 text-xs">
            <p class="font-medium text-brand-dark mb-1">📋เมนู:</p>
@@ -571,7 +581,26 @@ Park)</p>
             <div class="img-slider-counter">1/2</div>
           </div>
           </div>
-         </div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
+         <div class="text-sm">
+          <p class="font-semibold">🙏 บทสวดบวงสรวงพระพรหม, พระนารายณ์ และพระศิวะ</p>
+          <div class="img-slider">
+            <div class="img-slider-track">
+              <div class="img-slide"><img src="https://img1.pic.in.th/images/16a766b4fe85e2bbc003ecee593579ee.png" loading="lazy" alt="Uluwatu Temple 1"></div>
+              <div class="img-slide"><img src="https://img1.pic.in.th/images/-3e7967172b005fe7.png" loading="lazy" alt="Uluwatu Temple 2"></div>              
+              <div class="img-slide"><img src="https://img2.pic.in.th/c0598588d15586cc429e5ade04da4760.png" loading="lazy" alt="Uluwatu Temple 3"></div>
+            </div>
+            <div class="img-slider-dots">
+            <span class="active"></span><span></span><span></span>
+            </div>
+            <div class="img-slider-counter">1/3</div>
+            </div>          
+            </div>
+            </div>
+            </div>
+
         <div class="relative">
          <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
          <div class="text-sm">
@@ -582,6 +611,16 @@ Park)</p>
        <li>เสริมสิริมงคลขอพรเรื่องความสงบสุขในชีวิต ความเจริญรุ่งเรือง และสติปัญญา</li></p>
           <div class="mt-3">
            <img src="https://www.balimagictour.com/wp-content/uploads/tirta-empul-tampaksiring.jpg" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
+          </div>
+         </div>
+        </div>
+
+        <div class="relative">
+         <div class="timeline-dot absolute timeline-dot-wrap top-1"></div>
+         <div class="text-sm">
+          <p class="font-semibold">🙏 บทสวดบวงสรวงพระอินทร์</p>
+         <div class="mt-3">
+           <img src="https://img2.pic.in.th/f264ff6468923ba0e9e734fc16929587.png" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
           </div>
          </div>
         </div>
@@ -864,7 +903,7 @@ Park)</p>
         <div class="flex items-center gap-2 text-red-500"><span>🥩 No beef <strong class="text-white">6</strong> ท่าน</span></div>
         <div class="flex items-center gap-2 text-blue-200"><span>🐟 No fish <strong class="text-white">1</strong> ท่าน</span></div>
         <div class="flex items-center gap-2 text-orange-400"><span>🦐 No shrimp heads <strong class="text-white">1</strong> ท่าน</span></div>
-        <div class="flex items-center gap-2 text-amber-300"><span>🦐💧No shrimp Oil <strong class="text-white">1</strong> ท่าน</span></div>
+        <div class="flex items-center gap-2 text-amber-300"><span>🦐💧No shrimp oil <strong class="text-white">1</strong> ท่าน</span></div>
        </div>
       </div>
      </div>
