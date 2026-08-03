@@ -492,7 +492,7 @@ Park)</p>
 ประทับใจในความกตัญญู และยอมรับพญาครุฑเป็นพาหนะคู่กายพร้อมประทานความเป็นอมตะให้
 นิยมขอพรในเรื่องความเจริญรุ่งเรืองในหน้าที่การงาน การเลื่อนขั้นเลื่อนตำแหน่ง การเสริมอำนาจบารมี และการปกป้องคุ้มครองจากภัยอันตรายหรือสิ่งอัปมงคล ทั้งยังเหมาะสำหรับผู้ที่ต้องการขอพรเรื่อง ความกตัญญู รุ่งเรือง</p>
          <div class="mt-3">
-           <img src="https://baligreentour.com/wp-content/uploads/2015/10/Garuda-Wisnu-Kencana-Cultural-Park-Bali-Tourist-Attractions-Bali-Green-Tour.webp" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
+           <img src="https://baligreentour.com/wp-content/uploads/2015/10/Garuda-Wisnu-Kencana-Cultural-Park-Bali-Tourist-Attractions-Bali-Green-Tour.webp" loading="lazy" class="tour-img2" alt="Garuda Wisnu Kencana">
           </div>
          </div>
         </div>
