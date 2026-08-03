@@ -97,6 +97,14 @@ body { font-family: 'Prompt', sans-serif; }
   display: block;
 }
 
+.tour-img2 {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px; /* ถ้าต้องการมุมโค้ง */
+}
 /* ===================== RESPONSIVE LAYOUT SYSTEM ===================== */
 /* Mobile-first base styles, then desktop overrides at md breakpoint (768px) */
 
@@ -513,7 +521,7 @@ Park)</p>
          <div class="text-sm">
           <p class="font-semibold">🙏 บทสวดบวงสรวงพระศิวะ</p>
          <div class="mt-3">
-           <img src="https://img2.pic.in.th/c0598588d15586cc429e5ade04da4760.png" loading="lazy" class="tour-img" alt="Garuda Wisnu Kencana">
+           <img src="https://img2.pic.in.th/c0598588d15586cc429e5ade04da4760.png" loading="lazy" class="tour-img2" alt="Garuda Wisnu Kencana">
           </div>
          </div>
         </div>
